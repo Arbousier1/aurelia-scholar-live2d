@@ -1,0 +1,5 @@
+name: MineChess
+version: '1.0'
+main: me.son14ka.mineChess.MineChess
+api-version: '1.21'
+authors: [ SON14KA ]
