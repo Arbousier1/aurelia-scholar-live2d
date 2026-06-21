@@ -1,0 +1,33 @@
+{
+  "sourceImage": {
+    "width": 1024,
+    "height": 1536,
+    "unit": "px",
+    "note": "Manual first-pass coordinate map for the clean full-body character reference supplied in the latest prompt. These bounds are Photoshop bootstrap selections; refine masks by hand for final Live2D PSD."
+  },
+  "regions": [
+    { "id": "character-full", "group": "00_REFERENCE", "bbox": [155, 38, 910, 1518], "priority": "S", "notes": "Full character silhouette; use as source for all split layers." },
+    { "id": "head-face", "group": "02_HEAD_FACE", "bbox": [423, 122, 616, 337], "priority": "S", "notes": "Face/head base under bangs, glasses and hair." },
+    { "id": "eyes-glasses", "group": "03_EYES_BROWS_MOUTH_GLASSES", "bbox": [430, 205, 605, 276], "priority": "S", "notes": "Glasses, lenses, eyes, brows and eye highlights." },
+    { "id": "mouth-nose", "group": "03_EYES_BROWS_MOUTH_GLASSES", "bbox": [489, 265, 556, 316], "priority": "S", "notes": "Mouth/nose expression layers." },
+    { "id": "ahoge", "group": "04_HAIR", "bbox": [459, 32, 584, 130], "priority": "S", "notes": "Ahoge strands; independent physics." },
+    { "id": "bangs", "group": "04_HAIR", "bbox": [360, 92, 648, 254], "priority": "S", "notes": "Front bangs split into many strand layers." },
+    { "id": "left-hair", "group": "04_HAIR", "bbox": [190, 158, 481, 925], "priority": "S", "notes": "Left side hair, curls and tips." },
+    { "id": "right-hair", "group": "04_HAIR", "bbox": [568, 145, 884, 902], "priority": "S", "notes": "Right side hair, curls and tips." },
+    { "id": "back-hair", "group": "04_HAIR", "bbox": [221, 95, 875, 1170], "priority": "S", "notes": "Back hair mass behind body and cape." },
+    { "id": "head-flower-ribbon", "group": "09_HEAD_ACCESSORIES_EFFECTS", "bbox": [611, 123, 747, 251], "priority": "S", "notes": "Head flower petals and black ribbon." },
+    { "id": "neck-bow", "group": "05_OUTFIT_BLOUSE_BOW", "bbox": [428, 336, 570, 457], "priority": "S", "notes": "Black neck bow and orange starflower mark." },
+    { "id": "left-arm-hand", "group": "07_ARMS_HANDS_BOOK", "bbox": [337, 300, 493, 596], "priority": "S", "notes": "Raised left arm and hand near chin; separate fingers." },
+    { "id": "right-arm-hand", "group": "07_ARMS_HANDS_BOOK", "bbox": [483, 430, 691, 637], "priority": "S", "notes": "Right arm/hand gripping book." },
+    { "id": "book", "group": "07_ARMS_HANDS_BOOK", "bbox": [482, 394, 679, 598], "priority": "S", "notes": "Book cover, spine, pages and flip variants." },
+    { "id": "blouse", "group": "05_OUTFIT_BLOUSE_BOW", "bbox": [294, 342, 728, 784], "priority": "S", "notes": "Blouse, sleeves, cuffs, lace and torso fills." },
+    { "id": "left-cape", "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH", "bbox": [158, 533, 426, 1407], "priority": "S", "notes": "Left transparent cape sheet and inner folds." },
+    { "id": "right-cape", "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH", "bbox": [617, 506, 911, 1428], "priority": "S", "notes": "Right orange/cream cape sheet and folds." },
+    { "id": "skirt-lace", "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH", "bbox": [300, 646, 631, 894], "priority": "S", "notes": "Skirt, lace rows, frills and underskirt." },
+    { "id": "watch-chain", "group": "08_LEGS_SOCKS_SHOES_WATCH", "bbox": [580, 610, 672, 823], "priority": "A", "notes": "Pocket watch, chain links and tassel." },
+    { "id": "legs", "group": "08_LEGS_SOCKS_SHOES_WATCH", "bbox": [391, 810, 620, 1375], "priority": "S", "notes": "Legs, knees, calves and hidden redraw under skirt/socks." },
+    { "id": "left-sock-shoe", "group": "08_LEGS_SOCKS_SHOES_WATCH", "bbox": [405, 1190, 559, 1530], "priority": "A", "notes": "Left sock folds and shoe parts." },
+    { "id": "right-sock-shoe", "group": "08_LEGS_SOCKS_SHOES_WATCH", "bbox": [545, 1130, 710, 1462], "priority": "A", "notes": "Right sock folds and shoe parts." },
+    { "id": "garter-flower", "group": "08_LEGS_SOCKS_SHOES_WATCH", "bbox": [489, 860, 604, 1012], "priority": "A", "notes": "Thigh flower and hanging ribbons." }
+  ]
+}
