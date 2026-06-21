@@ -1,5 +1,5 @@
 {
-  "name": "ClaudeScholarPrototype",
+  "name": "AureliaScholarPrototype",
   "type": "browser-live2d-decomposition-workbench",
   "version": "1.0.0",
   "entry": "index.html",
@@ -38,7 +38,7 @@
   ],
   "notes": "Professional decomposition workbench; not final Cubism .cmo3 and not a simplified character drawing.",
   "runtime": {
-    "model3": "runtime/claude-scholar.model3.json",
+    "model3": "runtime/aurelia-scholar.model3.json",
     "physics": "runtime/physics.json",
     "pose": "runtime/pose3.json",
     "layerMap": "layer-map.json",

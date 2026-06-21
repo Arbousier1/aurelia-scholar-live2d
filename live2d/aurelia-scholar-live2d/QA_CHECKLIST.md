@@ -1,4 +1,4 @@
-# Claude Scholar Prototype QA Checklist
+# Aurelia Scholar Prototype QA Checklist
 
 ## Browser prototype
 
@@ -12,7 +12,7 @@
 ## Cubism migration readiness
 
 - [ ] `model-manifest.json` lists the same expressions and motions as the UI.
-- [ ] `runtime/claude-scholar.model3.json` references every expression and motion file.
+- [ ] `runtime/aurelia-scholar.model3.json` references every expression and motion file.
 - [ ] `runtime/expressions/*.exp3.json` parameter IDs match the premium spec.
 - [ ] `runtime/motions/*.motion3.json` includes fade timing and non-looping interaction motions.
 - [ ] `runtime/physics.json` covers hair, cape, ribbon and watch physical groups.

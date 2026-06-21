@@ -1,5 +1,5 @@
 {
-  "character": "Claude Scholar reference decomposition",
+  "character": "Aurelia Scholar reference decomposition",
   "goal": "Premium Live2D PSD/Cubism production handoff based on the supplied full-body reference image.",
   "warning": "This is a professional decomposition plan for the provided flattened reference. Pixel-accurate layer extraction still requires the original high-resolution source image or redraw work.",
   "groups": [

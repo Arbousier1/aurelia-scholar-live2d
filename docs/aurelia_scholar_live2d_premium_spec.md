@@ -1,4 +1,4 @@
-# Claude 风格 Live2D 豪华级形象完整拆分规格书
+# Aurelia Scholar 原创商用 Live2D 豪华级形象完整拆分规格书
 
 > 目的：基于用户提供的橙白系学者少女参考图，制作可交付给原画拆分、Live2D 建模、动画、表情绑定与后期 QA 的「市面豪华级」拆分标准。本文不是直接生成 `.psd`/`.cmo3` 文件，而是定义可照此生产的完整分层、参数、表情、动作与验收规范。
 
@@ -15,13 +15,13 @@
 - **PSD 色彩**：sRGB，16-bit 优先；最终交付可转 8-bit。
 - **拆分精度**：头发丝、蕾丝、披肩边缘、手指、书角、眼镜腿、花瓣、挂饰链条均需独立补画遮挡区域。
 - **命名规范**：`部位_方向_层级_状态`，例如 `Hair_Front_L_03`, `Eye_R_Highlight_A`, `Cape_Back_R_Inner`。
-- **Live2D 版本**：Cubism 5.x；模型文件建议 `ClaudeScholar_Premium.model3.json`。
+- **Live2D 版本**：Cubism 5.x；模型文件建议 `AureliaScholar_Commercial.model3.json`。
 - **目标面捕**：兼容 VTube Studio、nizima LIVE、PRPRLive、OBS 透明背景推流。
 
 ## 3. PSD 顶层分组结构
 
 ```text
-ClaudeScholar_Premium.psd
+AureliaScholar_Commercial.psd
 ├─ 00_GUIDE_不可导出
 ├─ 01_BODY_身体
 ├─ 02_HEAD_头部
@@ -383,9 +383,9 @@ Root
 
 ## 17. 交付物清单
 
-- `ClaudeScholar_Premium.psd`：完整分层源文件。
-- `ClaudeScholar_Premium.cmo3`：Cubism 工程。
-- `ClaudeScholar_Premium.model3.json`：运行时模型。
+- `AureliaScholar_Commercial.psd`：完整分层源文件。
+- `AureliaScholar_Commercial.cmo3`：Cubism 工程。
+- `AureliaScholar_Commercial.model3.json`：运行时模型。
 - `motions/*.motion3.json`：动作文件。
 - `expressions/*.exp3.json`：表情文件。
 - `physics.json`：物理配置。
@@ -408,4 +408,4 @@ Root
 
 ## 19. 制作备注
 
-参考图中含有 Claude / Anthropic 字样与品牌视觉元素。若该模型用于公开商业直播、周边或二创发布，建议将文字标识替换为原创名称与原创符号，保留“暖橙学者 AI 少女”的气质，但避免直接使用第三方品牌资产。
+参考图中含有 第三方品牌 字样与品牌视觉元素。若该模型用于公开商业直播、周边或二创发布，建议将文字标识替换为原创名称与原创符号，保留“暖橙学者 AI 少女”的气质，但避免直接使用第三方品牌资产。
