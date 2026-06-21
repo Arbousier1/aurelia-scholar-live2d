@@ -1,0 +1,519 @@
+{
+  "source": "live2d/aurelia-scholar-live2d/source/clean-reference.jpg",
+  "sourceSize": [
+    1024,
+    1536
+  ],
+  "layerCount": 23,
+  "deliverableType": "first-pass-real-png-split-from-user-reference",
+  "warning": "These are actual transparent PNG split layers generated from the supplied image. Final commercial PSD still needs manual mask cleanup, hidden-area redraw, and detailed sub-splitting for hair/lace/chains/fingers.",
+  "psd": "live2d/aurelia-scholar-live2d/split/output-clean-reference/aurelia_clean_reference_first_pass_split.psd",
+  "layers": [
+    {
+      "index": 1,
+      "id": "character-full",
+      "group": "00_REFERENCE",
+      "bbox": [
+        155,
+        38,
+        910,
+        1518
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        755,
+        1480
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/01_00-reference__character-full.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/01_00-reference__character-full__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/01_00-reference__character-full__alpha.png",
+      "notes": "Full character silhouette; use as source for all split layers.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 2,
+      "id": "head-face",
+      "group": "02_HEAD_FACE",
+      "bbox": [
+        423,
+        122,
+        616,
+        337
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        193,
+        215
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/02_02-head-face__head-face.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/02_02-head-face__head-face__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/02_02-head-face__head-face__alpha.png",
+      "notes": "Face/head base under bangs, glasses and hair.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 3,
+      "id": "eyes-glasses",
+      "group": "03_EYES_BROWS_MOUTH_GLASSES",
+      "bbox": [
+        430,
+        205,
+        605,
+        276
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        175,
+        71
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/03_03-eyes-brows-mouth-glasses__eyes-glasses.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/03_03-eyes-brows-mouth-glasses__eyes-glasses__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/03_03-eyes-brows-mouth-glasses__eyes-glasses__alpha.png",
+      "notes": "Glasses, lenses, eyes, brows and eye highlights.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 4,
+      "id": "mouth-nose",
+      "group": "03_EYES_BROWS_MOUTH_GLASSES",
+      "bbox": [
+        489,
+        265,
+        556,
+        316
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        67,
+        51
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/04_03-eyes-brows-mouth-glasses__mouth-nose.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/04_03-eyes-brows-mouth-glasses__mouth-nose__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/04_03-eyes-brows-mouth-glasses__mouth-nose__alpha.png",
+      "notes": "Mouth/nose expression layers.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 5,
+      "id": "ahoge",
+      "group": "04_HAIR",
+      "bbox": [
+        459,
+        32,
+        584,
+        130
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        125,
+        98
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/05_04-hair__ahoge.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/05_04-hair__ahoge__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/05_04-hair__ahoge__alpha.png",
+      "notes": "Ahoge strands; independent physics.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 6,
+      "id": "bangs",
+      "group": "04_HAIR",
+      "bbox": [
+        360,
+        92,
+        648,
+        254
+      ],
+      "trimWithinBbox": [
+        33,
+        0,
+        288,
+        162
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/06_04-hair__bangs.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/06_04-hair__bangs__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/06_04-hair__bangs__alpha.png",
+      "notes": "Front bangs split into many strand layers.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 7,
+      "id": "left-hair",
+      "group": "04_HAIR",
+      "bbox": [
+        190,
+        158,
+        481,
+        925
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        291,
+        767
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/07_04-hair__left-hair.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/07_04-hair__left-hair__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/07_04-hair__left-hair__alpha.png",
+      "notes": "Left side hair, curls and tips.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 8,
+      "id": "right-hair",
+      "group": "04_HAIR",
+      "bbox": [
+        568,
+        145,
+        884,
+        902
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        316,
+        757
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/08_04-hair__right-hair.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/08_04-hair__right-hair__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/08_04-hair__right-hair__alpha.png",
+      "notes": "Right side hair, curls and tips.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 9,
+      "id": "back-hair",
+      "group": "04_HAIR",
+      "bbox": [
+        221,
+        95,
+        875,
+        1170
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        654,
+        1075
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/09_04-hair__back-hair.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/09_04-hair__back-hair__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/09_04-hair__back-hair__alpha.png",
+      "notes": "Back hair mass behind body and cape.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 10,
+      "id": "head-flower-ribbon",
+      "group": "09_HEAD_ACCESSORIES_EFFECTS",
+      "bbox": [
+        611,
+        123,
+        747,
+        251
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        116,
+        128
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/10_09-head-accessories-effects__head-flower-ribbon.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/10_09-head-accessories-effects__head-flower-ribbon__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/10_09-head-accessories-effects__head-flower-ribbon__alpha.png",
+      "notes": "Head flower petals and black ribbon.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 11,
+      "id": "neck-bow",
+      "group": "05_OUTFIT_BLOUSE_BOW",
+      "bbox": [
+        428,
+        336,
+        570,
+        457
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        142,
+        121
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/11_05-outfit-blouse-bow__neck-bow.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/11_05-outfit-blouse-bow__neck-bow__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/11_05-outfit-blouse-bow__neck-bow__alpha.png",
+      "notes": "Black neck bow and orange starflower mark.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 12,
+      "id": "left-arm-hand",
+      "group": "07_ARMS_HANDS_BOOK",
+      "bbox": [
+        337,
+        300,
+        493,
+        596
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        156,
+        296
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/12_07-arms-hands-book__left-arm-hand.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/12_07-arms-hands-book__left-arm-hand__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/12_07-arms-hands-book__left-arm-hand__alpha.png",
+      "notes": "Raised left arm and hand near chin; separate fingers.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 13,
+      "id": "right-arm-hand",
+      "group": "07_ARMS_HANDS_BOOK",
+      "bbox": [
+        483,
+        430,
+        691,
+        637
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        208,
+        207
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/13_07-arms-hands-book__right-arm-hand.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/13_07-arms-hands-book__right-arm-hand__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/13_07-arms-hands-book__right-arm-hand__alpha.png",
+      "notes": "Right arm/hand gripping book.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 14,
+      "id": "book",
+      "group": "07_ARMS_HANDS_BOOK",
+      "bbox": [
+        482,
+        394,
+        679,
+        598
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        197,
+        204
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/14_07-arms-hands-book__book.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/14_07-arms-hands-book__book__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/14_07-arms-hands-book__book__alpha.png",
+      "notes": "Book cover, spine, pages and flip variants.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 15,
+      "id": "blouse",
+      "group": "05_OUTFIT_BLOUSE_BOW",
+      "bbox": [
+        294,
+        342,
+        728,
+        784
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        434,
+        442
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/15_05-outfit-blouse-bow__blouse.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/15_05-outfit-blouse-bow__blouse__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/15_05-outfit-blouse-bow__blouse__alpha.png",
+      "notes": "Blouse, sleeves, cuffs, lace and torso fills.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 16,
+      "id": "left-cape",
+      "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH",
+      "bbox": [
+        158,
+        533,
+        426,
+        1407
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        268,
+        874
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/16_06-cape-skirt-transparent-cloth__left-cape.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/16_06-cape-skirt-transparent-cloth__left-cape__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/16_06-cape-skirt-transparent-cloth__left-cape__alpha.png",
+      "notes": "Left transparent cape sheet and inner folds.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 17,
+      "id": "right-cape",
+      "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH",
+      "bbox": [
+        617,
+        506,
+        911,
+        1428
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        294,
+        922
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/17_06-cape-skirt-transparent-cloth__right-cape.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/17_06-cape-skirt-transparent-cloth__right-cape__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/17_06-cape-skirt-transparent-cloth__right-cape__alpha.png",
+      "notes": "Right orange/cream cape sheet and folds.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 18,
+      "id": "skirt-lace",
+      "group": "06_CAPE_SKIRT_TRANSPARENT_CLOTH",
+      "bbox": [
+        300,
+        646,
+        631,
+        894
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        331,
+        248
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/18_06-cape-skirt-transparent-cloth__skirt-lace.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/18_06-cape-skirt-transparent-cloth__skirt-lace__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/18_06-cape-skirt-transparent-cloth__skirt-lace__alpha.png",
+      "notes": "Skirt, lace rows, frills and underskirt.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 19,
+      "id": "watch-chain",
+      "group": "08_LEGS_SOCKS_SHOES_WATCH",
+      "bbox": [
+        580,
+        610,
+        672,
+        823
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        92,
+        213
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/19_08-legs-socks-shoes-watch__watch-chain.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/19_08-legs-socks-shoes-watch__watch-chain__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/19_08-legs-socks-shoes-watch__watch-chain__alpha.png",
+      "notes": "Pocket watch, chain links and tassel.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 20,
+      "id": "legs",
+      "group": "08_LEGS_SOCKS_SHOES_WATCH",
+      "bbox": [
+        391,
+        810,
+        620,
+        1375
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        229,
+        565
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/20_08-legs-socks-shoes-watch__legs.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/20_08-legs-socks-shoes-watch__legs__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/20_08-legs-socks-shoes-watch__legs__alpha.png",
+      "notes": "Legs, knees, calves and hidden redraw under skirt/socks.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 21,
+      "id": "left-sock-shoe",
+      "group": "08_LEGS_SOCKS_SHOES_WATCH",
+      "bbox": [
+        405,
+        1190,
+        559,
+        1530
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        154,
+        340
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/21_08-legs-socks-shoes-watch__left-sock-shoe.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/21_08-legs-socks-shoes-watch__left-sock-shoe__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/21_08-legs-socks-shoes-watch__left-sock-shoe__alpha.png",
+      "notes": "Left sock folds and shoe parts.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 22,
+      "id": "right-sock-shoe",
+      "group": "08_LEGS_SOCKS_SHOES_WATCH",
+      "bbox": [
+        545,
+        1130,
+        710,
+        1462
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        165,
+        332
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/22_08-legs-socks-shoes-watch__right-sock-shoe.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/22_08-legs-socks-shoes-watch__right-sock-shoe__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/22_08-legs-socks-shoes-watch__right-sock-shoe__alpha.png",
+      "notes": "Right sock folds and shoe parts.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    },
+    {
+      "index": 23,
+      "id": "garter-flower",
+      "group": "08_LEGS_SOCKS_SHOES_WATCH",
+      "bbox": [
+        489,
+        860,
+        604,
+        1012
+      ],
+      "trimWithinBbox": [
+        0,
+        0,
+        115,
+        152
+      ],
+      "cropPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-crop-png/23_08-legs-socks-shoes-watch__garter-flower.png",
+      "canvasPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/layers-canvas-png/23_08-legs-socks-shoes-watch__garter-flower__canvas.png",
+      "alphaMaskPng": "live2d/aurelia-scholar-live2d/split/output-clean-reference/masks-alpha-png/23_08-legs-socks-shoes-watch__garter-flower__alpha.png",
+      "notes": "Thigh flower and hanging ribbons.",
+      "status": "first-pass-transparent-layer-needs-artist-edge-refine"
+    }
+  ]
+}
