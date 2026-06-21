@@ -49,3 +49,13 @@ http://localhost:8080
 - `photoshop/aurelia_live2d_split_bootstrap.jsx`：在 Photoshop 中打开干净 1024×1536 参考图后运行，可创建 Live2D 标准组并复制第一轮区域图层。
 - `split/clean-reference-coordinate-map.json`：针对干净角色图的手工坐标表。
 - 注意：脚本创建的是可精修的拆层起点，最终仍需要人工精修蒙版、拆发丝/手指/蕾丝/链条并补画遮挡区域。
+
+## 已直接生成的拆层输出
+
+- `source/clean-reference.jpg`：本次用户提供的 1024×1536 干净角色图源文件。
+- `split/output-clean-reference/aurelia_clean_reference_first_pass_split.psd`：已生成的可打开 PSD，包含源图和 23 个第一版透明拆层。
+- `split/output-clean-reference/layers-crop-png/`：紧裁透明 PNG 部件。
+- `split/output-clean-reference/layers-canvas-png/`：保持原画布坐标的透明 PNG 部件。
+- `split/output-clean-reference/masks-alpha-png/`：alpha 蒙版。
+- `split/output-clean-reference/contact_sheet.png`：拆层总览预览。
+- `split/output-clean-reference/aurelia_clean_reference_first_pass_split_assets.zip`：PSD、PNG、mask、manifest 和预览图打包文件。
