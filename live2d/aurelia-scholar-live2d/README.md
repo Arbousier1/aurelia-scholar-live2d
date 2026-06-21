@@ -42,3 +42,10 @@ http://localhost:8080
 - `split/final-layer-tree.json`：完整 PSD 顶层组和图层树。
 - `split/final-parameter-binding.json`：Cubism 参数到图层/部件的绑定表。
 - `split/final_split_order.md`：最终拆分、补画、PSD 导出顺序。
+
+
+## Photoshop 拆层脚本
+
+- `photoshop/aurelia_live2d_split_bootstrap.jsx`：在 Photoshop 中打开干净 1024×1536 参考图后运行，可创建 Live2D 标准组并复制第一轮区域图层。
+- `split/clean-reference-coordinate-map.json`：针对干净角色图的手工坐标表。
+- 注意：脚本创建的是可精修的拆层起点，最终仍需要人工精修蒙版、拆发丝/手指/蕾丝/链条并补画遮挡区域。

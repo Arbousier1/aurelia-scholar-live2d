@@ -10,6 +10,7 @@
 - `live2d/aurelia-scholar-live2d/layer-map.json`：浏览器原型层到 PSD/Cubism 层的迁移映射。
 - `live2d/aurelia-scholar-live2d/QA_CHECKLIST.md`：原型、迁移与生产交付 QA 清单。
 - `live2d/aurelia-scholar-live2d/split/`：基于参考图的第一阶段坐标拆分、完整 466 行图层清单、参数绑定和最终切割顺序。
+- `live2d/aurelia-scholar-live2d/photoshop/aurelia_live2d_split_bootstrap.jsx`：用于 Photoshop 的初始拆层脚本，按干净图坐标创建组和区域图层。
 
 ## 在线预览
 
