@@ -157,6 +157,22 @@
       </div>
 
       <div class="panel">
+        <h2>生产工具链接</h2>
+        <div class="groups">
+          <article class="group-card">
+            <div class="group-head"><h3>画师执行说明</h3><span class="badge">必读</span></div>
+            <p class="note">包含 8 大组的详细图层命名、表情/动作目标、交付 checklist。</p>
+            <a href="artist-instructions.md" target="_blank" style="color:var(--orange);font-weight:700;">打开 artist-instructions.md →</a>
+          </article>
+          <article class="group-card">
+            <div class="group-head"><h3>粗切叠加预览</h3><span class="badge">需 reference.png</span></div>
+            <p class="note">上传高清原图并运行 <code>python3 scripts/generate_part_crops.py</code> 后，可查看所有 bbox 在原图上的叠加效果。</p>
+            <a href="parts/layered-preview.html" target="_blank" style="color:var(--orange);font-weight:700;">打开 layered-preview.html →</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="panel">
         <h2>第一阶段原图坐标拆分</h2>
         <p class="warning">以下坐标基于 850×1106 的参考图预览手工标注，用于画师切割和补画的第一轮工单，不是最终像素级蒙版。</p>
         <div id="regions" class="groups"></div>

@@ -19,6 +19,8 @@ python3 -m http.server 8080 --directory /workspace
 - `parameter-binding.json`：Cubism 参数到图层/部件的绑定表。
 - `layer-map.json`：前端层级 → PSD 分组 → Cubism Part → 参数的对照表。
 - `QA_CHECKLIST.md`：版权、分层、参数、物理、表情动作、运行时交付检查项。
+- `artist-instructions.md`：画师落地执行说明（命名规范、表情/动作目标、分层细节、交付 checklist）。
+- `scripts/generate_part_crops.py`：读取 `reference.png` 自动生成 `parts/*.png` 粗切与 `parts/layered-preview.html`。
 - `runtime/`：Cubism 风格运行时占位包（`model3.json`、表情、动作、物理、姿态）。
 
 ## 生产目标
