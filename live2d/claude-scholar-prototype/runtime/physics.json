@@ -1,0 +1,18 @@
+{
+  "Version": 3,
+  "Meta": {
+    "PhysicsSettingCount": 6,
+    "TotalInputCount": 12,
+    "TotalOutputCount": 12,
+    "VertexCount": 24,
+    "EffectiveForces": { "Gravity": { "X": 0, "Y": -1 }, "Wind": { "X": 0.18, "Y": 0 } }
+  },
+  "PhysicsSettings": [
+    { "Id": "Physics_Hair_Bangs", "Input": ["ParamAngleX", "ParamAngleZ"], "Output": ["ParamHairFront"], "Damping": 0.55, "Response": "quick" },
+    { "Id": "Physics_Hair_Side", "Input": ["ParamAngleX", "ParamAngleZ"], "Output": ["ParamHairSide"], "Damping": 0.42, "Response": "medium" },
+    { "Id": "Physics_Hair_Back", "Input": ["ParamAngleX", "ParamBodyAngleZ"], "Output": ["ParamHairBack"], "Damping": 0.3, "Response": "slow-heavy" },
+    { "Id": "Physics_Cape", "Input": ["ParamBodyAngleX", "ParamBodyAngleZ"], "Output": ["ParamCapeSwing"], "Damping": 0.34, "Response": "slow-cloth" },
+    { "Id": "Physics_Ribbon", "Input": ["ParamBreath", "ParamBodyAngleZ"], "Output": ["ParamRibbonSwing"], "Damping": 0.5, "Response": "light" },
+    { "Id": "Physics_Watch", "Input": ["ParamBodyAngleX", "ParamBodyAngleZ"], "Output": ["ParamWatchSwing"], "Damping": 0.22, "Response": "pendulum" }
+  ]
+}

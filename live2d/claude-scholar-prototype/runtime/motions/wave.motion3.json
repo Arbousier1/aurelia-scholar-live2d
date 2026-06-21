@@ -1,0 +1,8 @@
+{
+  "Version": 3,
+  "Meta": { "Duration": 1.8, "Fps": 30, "Loop": false, "CurveCount": 2, "TotalSegmentCount": 6, "TotalPointCount": 9 },
+  "Curves": [
+    { "Target": "Parameter", "Id": "ParamArmRWave", "Segments": [0, 0, 1, 0.3, 1, 1, 0.6, -0.7, 1, 0.9, 1, 1, 1.8, 0] },
+    { "Target": "Parameter", "Id": "ParamMouthForm", "Segments": [0, 0, 1, 0.4, 0.7, 1, 1.8, 0] }
+  ]
+}

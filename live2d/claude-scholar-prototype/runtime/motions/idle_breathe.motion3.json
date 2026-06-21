@@ -1,0 +1,10 @@
+{
+  "Version": 3,
+  "Meta": { "Duration": 4.2, "Fps": 30, "Loop": true, "CurveCount": 4, "TotalSegmentCount": 8, "TotalPointCount": 12 },
+  "Curves": [
+    { "Target": "Parameter", "Id": "ParamBreath", "Segments": [0, 0, 1, 2.1, 1, 1, 4.2, 0] },
+    { "Target": "Parameter", "Id": "ParamHairBack", "Segments": [0, 0, 1, 2.1, 0.18, 1, 4.2, 0] },
+    { "Target": "Parameter", "Id": "ParamCapeSwing", "Segments": [0, 0, 1, 2.1, -0.14, 1, 4.2, 0] },
+    { "Target": "Parameter", "Id": "ParamWatchSwing", "Segments": [0, -0.12, 1, 2.1, 0.18, 1, 4.2, -0.12] }
+  ]
+}

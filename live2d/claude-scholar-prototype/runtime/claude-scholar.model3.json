@@ -1,0 +1,44 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "../index.html#svg-prototype",
+    "Textures": [
+      "../screenshot.png"
+    ],
+    "Physics": "physics.json",
+    "Pose": "pose3.json",
+    "Expressions": [
+      { "Name": "default", "File": "expressions/default.exp3.json" },
+      { "Name": "smile", "File": "expressions/smile.exp3.json" },
+      { "Name": "shy", "File": "expressions/shy.exp3.json" },
+      { "Name": "cry", "File": "expressions/cry.exp3.json" },
+      { "Name": "serious", "File": "expressions/serious.exp3.json" },
+      { "Name": "glitch", "File": "expressions/glitch.exp3.json" }
+    ],
+    "Motions": {
+      "Idle": [
+        { "File": "motions/idle_breathe.motion3.json", "FadeInTime": 1.0, "FadeOutTime": 1.0 }
+      ],
+      "TapBody": [
+        { "File": "motions/wave.motion3.json", "FadeInTime": 0.35, "FadeOutTime": 0.6 },
+        { "File": "motions/bow.motion3.json", "FadeInTime": 0.45, "FadeOutTime": 0.8 },
+        { "File": "motions/tilt.motion3.json", "FadeInTime": 0.3, "FadeOutTime": 0.7 },
+        { "File": "motions/book.motion3.json", "FadeInTime": 0.35, "FadeOutTime": 0.7 }
+      ]
+    }
+  },
+  "Groups": [
+    { "Target": "Parameter", "Name": "EyeBlink", "Ids": ["ParamEyeLOpen", "ParamEyeROpen"] },
+    { "Target": "Parameter", "Name": "LipSync", "Ids": ["ParamMouthOpenY"] },
+    { "Target": "Parameter", "Name": "Head", "Ids": ["ParamAngleX", "ParamAngleY", "ParamAngleZ"] },
+    { "Target": "Parameter", "Name": "Body", "Ids": ["ParamBodyAngleX", "ParamBodyAngleY", "ParamBodyAngleZ"] }
+  ],
+  "HitAreas": [
+    { "Id": "HitAreaHead", "Name": "Head" },
+    { "Id": "HitAreaBody", "Name": "Body" },
+    { "Id": "HitAreaBook", "Name": "Book" }
+  ],
+  "Meta": {
+    "Note": "Cubism-style manifest for the browser prototype. Replace Moc and Textures with real .moc3/.png atlas files after PSD/Cubism production."
+  }
+}
