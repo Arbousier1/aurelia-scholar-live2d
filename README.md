@@ -9,6 +9,7 @@
 - `live2d/aurelia-scholar-live2d/runtime/`：Cubism 风格 model3、表情、动作、物理与姿势配置示例。
 - `live2d/aurelia-scholar-live2d/layer-map.json`：浏览器原型层到 PSD/Cubism 层的迁移映射。
 - `live2d/aurelia-scholar-live2d/QA_CHECKLIST.md`：原型、迁移与生产交付 QA 清单。
+- `live2d/aurelia-scholar-live2d/split/`：基于参考图的第一阶段坐标拆分、图层清单和切割顺序。
 
 ## 在线预览
 

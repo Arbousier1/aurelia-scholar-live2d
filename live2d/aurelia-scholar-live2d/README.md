@@ -30,3 +30,10 @@ http://localhost:8080
 ## 说明
 
 该工作台不是 Cubism Editor 导出的 `.cmo3` 工程，也不是最终绘制成品；它是给画师和建模师使用的拆解与重绘/建模工单。后续应使用高清原图或重绘稿按 `docs/aurelia_scholar_live2d_premium_spec.md` 继续制作 PSD 与 Cubism 工程。
+
+
+## 第一阶段拆分文件
+
+- `split/source-coordinate-map.json`：基于 850×1106 参考图预览手工标注的第一轮部位坐标、切割类型和补画说明。
+- `split/layer-inventory.csv`：第一轮 PSD/Cubism 图层清单，包含组名、图层、bbox、优先级和商用替换动作。
+- `split/phase1_cut_order.md`：商用清理、主体分离、高优先级部件拆分和 QA 顺序。

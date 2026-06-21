@@ -142,6 +142,12 @@
         <h2>拆分组清单</h2>
         <div id="groups" class="groups"></div>
       </div>
+
+      <div class="panel">
+        <h2>第一阶段原图坐标拆分</h2>
+        <p class="warning">以下坐标基于 850×1106 的参考图预览手工标注，用于画师切割和补画的第一轮工单，不是最终像素级蒙版。</p>
+        <div id="regions" class="groups"></div>
+      </div>
     </section>
   </main>
 
@@ -170,10 +176,28 @@
         </article>`;
     }
 
+    function renderRegion(region) {
+      return `
+        <article class="group-card" id="${region.id}">
+          <div class="group-head">
+            <h3>${region.group}</h3>
+            <span class="badge">${region.priority}</span>
+          </div>
+          <div class="params"><span class="param">bbox: ${region.bbox.join(', ')}</span><span class="param">${region.cutType}</span></div>
+          <p class="note">${region.notes}</p>
+        </article>`;
+    }
+
     loadPlan().then((plan) => {
       document.querySelector('#groups').innerHTML = plan.groups.map(renderGroup).join('');
     }).catch((error) => {
       document.querySelector('#groups').innerHTML = `<p class="warning">拆解 JSON 加载失败：${error.message}</p>`;
+    });
+
+    fetch('split/source-coordinate-map.json').then((response) => response.json()).then((map) => {
+      document.querySelector('#regions').innerHTML = map.regions.map(renderRegion).join('');
+    }).catch((error) => {
+      document.querySelector('#regions').innerHTML = `<p class="warning">坐标拆分数据加载失败：${error.message}</p>`;
     });
   </script>
 </body>
