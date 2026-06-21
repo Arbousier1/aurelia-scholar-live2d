@@ -1,6 +1,6 @@
 # Claude Scholar Live2D
 
-这是一个只包含 Live2D 交付物的私有仓库版本，已剔除原 MineChess/Minecraft 插件代码与构建产物。
+这是一个只包含 Live2D 交付物的公开预览仓库，已剔除原 MineChess/Minecraft 插件代码与构建产物。
 
 ## 内容
 
