@@ -1,0 +1,113 @@
+{
+  "parameterCount": 21,
+  "bindings": {
+    "ParamAngleX": [
+      "Head_Base",
+      "Face_Base",
+      "Hair front/side compensation",
+      "Glasses parallax"
+    ],
+    "ParamAngleY": [
+      "Head_Base",
+      "Face_Base",
+      "Neck shadow",
+      "Glasses parallax"
+    ],
+    "ParamAngleZ": [
+      "Head_Base",
+      "Ahoge_01~03",
+      "Bangs",
+      "SideHair_L/R"
+    ],
+    "ParamBodyAngleX": [
+      "Body_Torso_Base",
+      "Cape_L/R",
+      "Skirt_Front_Base"
+    ],
+    "ParamBodyAngleZ": [
+      "Body_Torso_Base",
+      "WatchChain_Link_01~18",
+      "Cape swing"
+    ],
+    "ParamEyeLOpen": [
+      "Eye_L_UpperLid",
+      "Eye_L_LowerLid",
+      "Eye_L_Lash_Upper"
+    ],
+    "ParamEyeROpen": [
+      "Eye_R_UpperLid",
+      "Eye_R_LowerLid",
+      "Eye_R_Lash_Upper"
+    ],
+    "ParamEyeBallX": [
+      "Eye_L_Iris_Base",
+      "Eye_R_Iris_Base",
+      "Highlights"
+    ],
+    "ParamEyeBallY": [
+      "Eye_L_Iris_Base",
+      "Eye_R_Iris_Base",
+      "Highlights"
+    ],
+    "ParamMouthOpenY": [
+      "Mouth_A",
+      "Mouth_I",
+      "Mouth_U",
+      "Mouth_E",
+      "Mouth_O",
+      "Mouth_Tongue",
+      "Mouth_Teeth"
+    ],
+    "ParamMouthForm": [
+      "Mouth_Line_Smile",
+      "Mouth_Line_Frown",
+      "Mouth_Line_Neutral"
+    ],
+    "ParamBreath": [
+      "Body_Chest_Breath_Highlight",
+      "Body_Chest_Breath_Shadow",
+      "Blouse_Base"
+    ],
+    "ParamHairFront": [
+      "Ahoge",
+      "Bangs"
+    ],
+    "ParamHairSide": [
+      "SideHair_L_01~12",
+      "SideHair_R_01~12"
+    ],
+    "ParamHairBack": [
+      "Hair_Back_Base",
+      "LongStrand_L/R",
+      "HairTip_L/R"
+    ],
+    "ParamCapeSwing": [
+      "Cape_L_Outer",
+      "Cape_R_Outer",
+      "TransparentVeil_L/R"
+    ],
+    "ParamSkirtSwing": [
+      "Skirt_Lace_01~24",
+      "Skirt_Frill_01~24"
+    ],
+    "ParamBookOpen": [
+      "Book_FrontCover",
+      "Book_BackCover",
+      "Book_PageBlock",
+      "Book_PageFlip_01~03"
+    ],
+    "ParamWatchSwing": [
+      "PocketWatch_Body",
+      "WatchChain_Link_01~18",
+      "Watch_Tassel_01~03"
+    ],
+    "ParamStarGlow": [
+      "Chest_Starflower_Glow",
+      "Sparkle_01~03"
+    ],
+    "ParamAI_Glitch": [
+      "AI_Glitch_Line_01",
+      "AI_Glitch_Line_02"
+    ]
+  }
+}

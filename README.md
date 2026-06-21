@@ -37,3 +37,8 @@ http://localhost:8080
 - `split/source-coordinate-map.json`：基于 850×1106 参考图预览手工标注的第一轮部位坐标、切割类型和补画说明。
 - `split/layer-inventory.csv`：第一轮 PSD/Cubism 图层清单，包含组名、图层、bbox、优先级和商用替换动作。
 - `split/phase1_cut_order.md`：商用清理、主体分离、高优先级部件拆分和 QA 顺序。
+
+- `split/final-layer-inventory.csv`：完整规划级 PSD/Cubism 图层清单，共 466 行。
+- `split/final-layer-tree.json`：完整 PSD 顶层组和图层树。
+- `split/final-parameter-binding.json`：Cubism 参数到图层/部件的绑定表。
+- `split/final_split_order.md`：最终拆分、补画、PSD 导出顺序。

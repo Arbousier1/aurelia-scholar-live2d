@@ -1,0 +1,10 @@
+{
+  "status": "complete split planning pass",
+  "source": "supplied flattened reference preview",
+  "sourceSize": "850x1106",
+  "layerInventory": "final-layer-inventory.csv",
+  "layerTree": "final-layer-tree.json",
+  "parameterBinding": "final-parameter-binding.json",
+  "layerCount": 466,
+  "nextRequiredHumanStep": "Artist redraws hidden areas and exports layered PSD; this plan is not a pixel mask extraction."
+}
