@@ -1,0 +1,48 @@
+{
+  "name": "AureliaScholarPrototype",
+  "type": "browser-live2d-decomposition-workbench",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "preview": "screenshot.png",
+  "expressions": [
+    "default",
+    "smile",
+    "shy",
+    "cry",
+    "serious",
+    "glitch"
+  ],
+  "motions": [
+    "wave",
+    "bow",
+    "tilt",
+    "book"
+  ],
+  "layerGroups": [
+    "hair-back",
+    "cape-l",
+    "cape-r",
+    "body-all",
+    "arm-wave",
+    "book",
+    "watch",
+    "head-all",
+    "hair-side-l",
+    "hair-side-r",
+    "hair-front",
+    "eye-open",
+    "blush",
+    "tear",
+    "sparkle",
+    "glitch"
+  ],
+  "notes": "Professional decomposition workbench; not final Cubism .cmo3 and not a simplified character drawing.",
+  "runtime": {
+    "model3": "runtime/aurelia-scholar.model3.json",
+    "physics": "runtime/physics.json",
+    "pose": "runtime/pose3.json",
+    "layerMap": "layer-map.json",
+    "qaChecklist": "QA_CHECKLIST.md"
+  },
+  "decompositionPlan": "decomposition-plan.json"
+}

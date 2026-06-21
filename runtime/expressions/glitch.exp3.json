@@ -1,0 +1,11 @@
+{
+  "Type": "Live2D Expression",
+  "FadeInTime": 0.08,
+  "FadeOutTime": 0.35,
+  "Parameters": [
+    { "Id": "ParamEyeLOpen", "Value": 1.18, "Blend": "Multiply" },
+    { "Id": "ParamEyeROpen", "Value": 1.18, "Blend": "Multiply" },
+    { "Id": "ParamAI_Glitch", "Value": 1.0, "Blend": "Add" },
+    { "Id": "ParamStarGlow", "Value": 1.0, "Blend": "Add" }
+  ]
+}

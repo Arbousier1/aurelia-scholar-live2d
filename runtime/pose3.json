@@ -1,0 +1,18 @@
+{
+  "Type": "Live2D Pose",
+  "FadeInTime": 0.5,
+  "Groups": [
+    [
+      { "Id": "PartArmRDefault", "Link": ["PartHandRDefault"] },
+      { "Id": "PartArmRWave", "Link": ["PartHandRWave"] }
+    ],
+    [
+      { "Id": "PartMouthNeutral" },
+      { "Id": "PartMouthHappy" }
+    ],
+    [
+      { "Id": "PartBookClosed" },
+      { "Id": "PartBookFlip" }
+    ]
+  ]
+}
