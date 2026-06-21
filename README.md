@@ -10,15 +10,13 @@
 - `live2d/claude-scholar-prototype/layer-map.json`：浏览器原型层到 PSD/Cubism 层的迁移映射。
 - `live2d/claude-scholar-prototype/QA_CHECKLIST.md`：原型、迁移与生产交付 QA 清单。
 
-## GitHub Pages 预览
+## 在线预览
 
-已准备并推送 `gh-pages` 分支，内容来自 `live2d/claude-scholar-prototype/`。
+GitHub Pages 已配置为从 `gh-pages` 分支发布，在线预览地址：
 
-> 注意：当前 GitHub API 返回“私有仓库当前计划不支持 GitHub Pages”。如需在线预览，需要将仓库改为 public，或升级到支持 private Pages 的 GitHub 计划。启用后预期地址为：
->
-> ```text
-> https://arbousier1.github.io/claude-scholar-live2d/
-> ```
+```text
+https://arbousier1.github.io/claude-scholar-live2d/
+```
 
 ## 运行原型
 
