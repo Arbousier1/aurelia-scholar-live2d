@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aurelia Scholar Live2D 专业拆解工作台</title>
+  <title>Claude AI 拟人角色 Live2D 拆解工作台</title>
   <style>
     :root {
       --ink: #563628;
@@ -73,10 +73,10 @@
     }
     .cut-line { position: absolute; border: 2px dashed rgba(133, 73, 45, .55); border-radius: 999px; color: #fff; background: var(--orange); padding: 4px 8px; font-size: 12px; font-weight: 800; }
     .cut-line:nth-child(2) { left: 42%; top: 12%; }
-    .cut-line:nth-child(3) { left: 22%; top: 33%; }
-    .cut-line:nth-child(4) { right: 18%; top: 39%; }
-    .cut-line:nth-child(5) { left: 37%; top: 55%; }
-    .cut-line:nth-child(6) { right: 24%; top: 65%; }
+    .cut-line:nth-child(3) { left: 22%; top: 28%; }
+    .cut-line:nth-child(4) { right: 18%; top: 30%; }
+    .cut-line:nth-child(5) { left: 37%; top: 48%; }
+    .cut-line:nth-child(6) { right: 24%; top: 56%; }
     .cut-line:nth-child(7) { left: 38%; bottom: 8%; }
     .reference-note { margin: 16px 4px 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .panel { padding: 22px; margin-bottom: 22px; }
@@ -98,6 +98,7 @@
     .param { font-size: 12px; border: 1px solid var(--line); color: #8b4f38; background: #fff9f4; padding: 6px 8px; border-radius: 999px; }
     .note { color: var(--muted); line-height: 1.75; font-size: 13px; }
     .warning { border-left: 5px solid var(--orange); background: #fff2e8; padding: 14px 16px; border-radius: 14px; line-height: 1.75; color: #70432f; }
+    .back { display: inline-block; margin-bottom: 12px; color: var(--orange); text-decoration: none; font-weight: 700; }
     @media (max-width: 920px) {
       header { position: static; }
       .layout { grid-template-columns: 1fr; }
@@ -108,8 +109,9 @@
 </head>
 <body>
   <header>
-    <h1>Live2D 专业拆解工作台</h1>
-    <p class="subtitle">针对参考图的真实生产拆分方案：不再用简陋 SVG 小人冒充成品，而是把原图应拆的部位、PSD 层级、Cubism 参数、物理组和交付注意事项清楚列出来，供画师重绘拆层与建模师绑定。</p>
+    <a href="/" class="back">← 返回首页</a>
+    <h1>Claude AI 拟人角色 Live2D 拆解</h1>
+    <p class="subtitle">基于提供的全身立绘，输出真实生产级拆分方案：列出应拆部位、PSD 层级、Cubism 参数、物理组与交付注意事项，供画师重绘拆层与建模师绑定。</p>
   </header>
 
   <main class="layout">
@@ -117,8 +119,8 @@
       <div class="reference-frame" aria-label="参考图拆分区域示意">
         <div class="silhouette"></div>
         <span class="cut-line">头脸</span>
-        <span class="cut-line">左发</span>
-        <span class="cut-line">右发</span>
+        <span class="cut-line">左编发</span>
+        <span class="cut-line">右编发</span>
         <span class="cut-line">书本</span>
         <span class="cut-line">怀表</span>
         <span class="cut-line">腿鞋</span>
@@ -129,12 +131,12 @@
     <section>
       <div class="panel">
         <h2>生产目标</h2>
-        <p class="warning">目标是按市面高规格模型拆：长发多物理链、透明披肩单独纹理/阴影/高光、眼镜独立反光、书本可翻页、手指可动、怀表链条物理、至少 16 表情与 10 动作。当前页面是拆解工单，不再展示低质量角色绘制。</p>
+        <p class="warning">目标是按市面高规格模型拆：双麻花辫多物理链、透明披肩单独纹理/阴影/高光、眼镜独立反光、书本可翻页、手指可动、怀表链条物理、至少 16 表情与 10 动作。当前页面是拆解工单，不再展示低质量角色绘制。</p>
         <div class="stats">
-          <div class="stat"><strong>180+</strong><span>建议 PSD 图层</span></div>
+          <div class="stat"><strong>200+</strong><span>建议 PSD 图层</span></div>
           <div class="stat"><strong>16+</strong><span>表情目标</span></div>
           <div class="stat"><strong>10+</strong><span>动作目标</span></div>
-          <div class="stat"><strong>9</strong><span>物理组目标</span></div>
+          <div class="stat"><strong>10</strong><span>物理组目标</span></div>
         </div>
       </div>
 
@@ -144,26 +146,14 @@
       </div>
 
       <div class="panel">
-        <h2>最终完整拆分包</h2>
-        <p class="warning">已生成完整规划级拆分：最终图层树、466 行 PSD/Cubism 图层清单、参数绑定表和最终切割顺序。注意：这仍是给画师重绘和建模师绑定的完整拆分工单，不是从压缩图自动抠出的像素级 PSD。</p>
+        <h2>商用清理提醒</h2>
+        <p class="warning">参考图包含 Claude/Anthropic 品牌 Logo、角色信息卡、文字标语等第三方元素。商业化生产前必须替换为原创标识与文案，本工单已列出需替换/移除的区域坐标。</p>
         <div class="stats">
-          <div class="stat"><strong id="finalLayerCount">466</strong><span>最终拆分图层</span></div>
-          <div class="stat"><strong>11</strong><span>顶层 PSD 组</span></div>
-          <div class="stat"><strong>20</strong><span>参数绑定项</span></div>
-          <div class="stat"><strong>3</strong><span>最终交付表</span></div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>新角色：Claude AI 拟人拆解</h2>
-        <p class="warning">基于新提供的全身立绘，已生成第二套生产级拆分工单，包含双麻花辫、泡泡袖、多层裙摆、左手托脸/右手抱书等特征拆分。</p>
-        <div class="stats">
-          <div class="stat"><strong>200+</strong><span>建议 PSD 图层</span></div>
+          <div class="stat"><strong>6</strong><span>需替换区域</span></div>
           <div class="stat"><strong>8</strong><span>拆分组</span></div>
           <div class="stat"><strong>24</strong><span>参数绑定项</span></div>
-          <div class="stat"><strong>10</strong><span>物理组</span></div>
+          <div class="stat"><strong>4</strong><span>交付表</span></div>
         </div>
-        <p style="margin-top:14px;"><a href="claude-ai/" style="color:var(--orange);font-weight:800;text-decoration:none;">→ 查看 Claude AI 拆分工作台</a></p>
       </div>
 
       <div class="panel">
@@ -217,7 +207,7 @@
       document.querySelector('#groups').innerHTML = `<p class="warning">拆解 JSON 加载失败：${error.message}</p>`;
     });
 
-    fetch('split/source-coordinate-map.json').then((response) => response.json()).then((map) => {
+    fetch('source-coordinate-map.json').then((response) => response.json()).then((map) => {
       document.querySelector('#regions').innerHTML = map.regions.map(renderRegion).join('');
     }).catch((error) => {
       document.querySelector('#regions').innerHTML = `<p class="warning">坐标拆分数据加载失败：${error.message}</p>`;

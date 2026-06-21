@@ -1,0 +1,31 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 2.5,
+    "Loop": false,
+    "CurveCount": 3
+  },
+  "Curves": [
+    {
+      "Target": "Parameter",
+      "Id": "ParamArmL",
+      "Segments": [
+        0, 0, 1, 0.5, 0.35, 1, 1.25, 0.3, 1, 2.0, 0.1, 2.5, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamHandPose",
+      "Segments": [
+        0, 0, 1, 0.5, 0.4, 1, 1.25, 0.35, 1, 2.0, 0.05, 2.5, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamAngleX",
+      "Segments": [
+        0, 0, 1, 0.6, 0.08, 1, 1.4, 0.05, 2.5, 0
+      ]
+    }
+  ]
+}

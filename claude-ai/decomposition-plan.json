@@ -1,0 +1,135 @@
+{
+  "character": "Claude AI 拟人角色拆解",
+  "goal": "基于提供的 Claude AI 全身立绘，输出高规格 Live2D PSD/Cubism 生产拆分工单，供画师重绘分层与建模师绑定。",
+  "warning": "本方案仍基于压平参考图的手动标注。像素级分层与遮挡补画需要高清原图或重绘稿。",
+  "referenceDimensions": { "width": 850, "height": 1106, "unit": "px", "note": "坐标与现有 Aurelia 项目保持一致的画布比例，供第一轮切割参考。" },
+  "groups": [
+    {
+      "id": "head-face",
+      "title": "头部 / 脸 / 五官 / 眼镜",
+      "priority": "S",
+      "parts": [
+        "Face_Base 完整补脸（含额头、耳朵、下颌）",
+        "Cheek_Blush_L/R, Nose_Shadow, Chin",
+        "Eye_L/R_White, Iris_Orange, Pupil, Highlights_Large/Small",
+        "UpperLid_L/R, LowerLid_L/R, Lashes_L/R, Eyeliner_L/R",
+        "Brow_L/R_Neutral/Smile/Surprise/Serious",
+        "Mouth_A/I/U/E/O, Smile, Open_Smile, Frown, Teeth, Tongue",
+        "Glasses_Frame_L/R, Bridge, Lens_L/R, Lens_Reflection, Temple_L/R"
+      ],
+      "parameters": ["ParamAngleX", "ParamAngleY", "ParamAngleZ", "ParamEyeBallX", "ParamEyeBallY", "ParamEyeLOpen", "ParamEyeROpen", "ParamMouthOpenY", "ParamMouthForm"],
+      "notes": "眼镜为角色记忆点，必须独立于眼睛和眉毛绑定；转头时镜片反光需做视差偏移。"
+    },
+    {
+      "id": "hair",
+      "title": "头发 / 呆毛 / 麻花辫 / 花饰 / 发带",
+      "priority": "S",
+      "parts": [
+        "Ahoge_01~04 顶部呆毛",
+        "Bang_Center_01~10 中刘海",
+        "Bang_Left_01~10, Bang_Right_01~10 侧刘海",
+        "SideBraid_Left_01~16 左侧编发",
+        "SideBraid_Right_01~16 右侧编发",
+        "BackHair_Base, BackHair_Inner, BackHair_Outer",
+        "LongWisp_L/R_01~20 长散发束",
+        "HairFlower_Left_Petal_01~10, Center, Shadow, Highlight",
+        "HairFlower_Right_Petal_01~10, Center, Shadow, Highlight",
+        "BlackRibbon_Loop_L/R, Tail_L/R, Knot"
+      ],
+      "parameters": ["ParamHairFront", "ParamHairSide", "ParamHairBack", "ParamAngleZ", "ParamBodyAngleZ"],
+      "notes": "长发与双麻花辫是最大动态源；按前中后三层、左右分发束、每束再分根部/中段/末梢拆分，避免大片色块变形。"
+    },
+    {
+      "id": "upper-outfit",
+      "title": "上衣 / 领口荷叶边 / 领结 / 星形标识 / 泡泡袖",
+      "priority": "S",
+      "parts": [
+        "Blouse_Base 米白衬衫",
+        "Collar_L/R, Collar_Lace_01~08, Collar_Shadow",
+        "Chest_Ruffle_01~12 胸前荷叶边",
+        "NeckRibbon_Knot, Loop_L/R, Tail_L/R, Ribbon_Shadow",
+        "StarEmblem_Center, Rays_01~12, Glow, InnerGradient",
+        "Sleeve_L/R_Puff_Upper, Sleeve_L/R_Puff_Lower, Sleeve_Shadow",
+        "Cuff_L/R_Base, Cuff_Lace_01~10, Cuff_Button",
+        "Shoulder_Ruffle_L/R"
+      ],
+      "parameters": ["ParamBreath", "ParamBodyAngleX", "ParamRibbonSwing", "ParamStarGlow"],
+      "notes": "胸前黑色领结与橙色星芒标识是品牌焦点，需单独发光层与轻微摆动。"
+    },
+    {
+      "id": "cape-skirt",
+      "title": "披肩 / 半透明外搭 / 多层裙摆 / 蕾丝 / 腰带",
+      "priority": "S",
+      "parts": [
+        "Cape_Back_Base 后披风",
+        "Cape_Left_Outer, Cape_Left_Inner, Cape_Left_Edge, Cape_Left_Ribbon",
+        "Cape_Right_Outer, Cape_Right_Inner, Cape_Right_Edge, Cape_Right_Ribbon",
+        "TransparentSleeve_L/R_Texture, Shadow, Highlight",
+        "WaistSash_Base, Sash_Bow, Sash_Tail_L/R",
+        "Skirt_Back_Base, Skirt_Front_Base, Skirt_Underskirt",
+        "Skirt_Lace_01~28 裙边蕾丝",
+        "Skirt_Frill_01~36 多层荷叶边",
+        "Dress_Pattern_Orange, Dress_Pattern_Cream, Dress_Shading"
+      ],
+      "parameters": ["ParamCapeSwing", "ParamSkirtSwing", "ParamSashSwing", "ParamBodyAngleX", "ParamBodyAngleZ"],
+      "notes": "披肩与裙摆层数多，建议至少 6 条物理链；半透明外搭必须拆纹理、阴影、高光与边缘。"
+    },
+    {
+      "id": "arms-book",
+      "title": "手臂 / 手指 / 抱书动作",
+      "priority": "S",
+      "parts": [
+        "Arm_L_Upper, Arm_L_Fore, Wrist_L",
+        "Hand_L_Palm, Thumb_L_01~02, Index_L_01~02, Middle_L_01~02, Ring_L_01~02, Pinky_L_01~02",
+        "Arm_R_Upper, Arm_R_Fore, Wrist_R",
+        "Hand_R_Palm, Thumb_R_01~02, Index_R_01~02, Middle_R_01~02, Ring_R_01~02, Pinky_R_01~02",
+        "BookStack_Top_Book, Middle_Book, Bottom_Book",
+        "Book_FrontCover, BackCover, Spine, PageBlock",
+        "Book_PageFlip_01~06, Bookmark_Ribbon, CornerHighlights"
+      ],
+      "parameters": ["ParamArmL", "ParamArmR", "ParamHandPose", "ParamBookTilt", "ParamPageFlip"],
+      "notes": "右手托书、左手触脸为招牌姿势；每根手指至少两段，便于做翻书、抱紧、轻触脸颊等动作。"
+    },
+    {
+      "id": "legs-accessories",
+      "title": "腿 / 袜套 / 鞋 / 腿花饰 / 怀表",
+      "priority": "A",
+      "parts": [
+        "Leg_L/R_Base, Thigh_L/R, Knee_L/R, Calf_L/R",
+        "LegShadow_UnderSkirt_L/R",
+        "GarterFlower_L/R_Petal_01~10, Center, RibbonTail_L/R",
+        "Sock_L/R_Base, Sock_Ruffle_01~10, Sock_Emblem_Asterisk",
+        "Shoe_L/R_Base, Sole, Strap, Buckle, ToeCap, Highlight, Bow"
+      ],
+      "parameters": ["ParamLegPose", "ParamShoeStep"],
+      "notes": "左腿前伸、右腿直立；袜套褶皱与腿花饰需独立物理，鞋扣与鞋带不可合并到鞋面。"
+    },
+    {
+      "id": "watch-chain",
+      "title": "怀表 / 表链 / 流苏",
+      "priority": "A",
+      "parts": [
+        "PocketWatch_Body, Back, Rim, Glass, HourHand, MinuteHand, SecondHand",
+        "WatchChain_Link_01~20",
+        "ChainTassel_01~06"
+      ],
+      "parameters": ["ParamWatchSwing", "ParamBodyAngleZ"],
+      "notes": "表链做独立物理链，随身体摆动自然垂坠；怀表本体可轻微旋转。"
+    },
+    {
+      "id": "effects-bg",
+      "title": "背景道具 / 纸张 / 花瓣 / 界面元素",
+      "priority": "B",
+      "parts": [
+        "FloatingPaper_01~12",
+        "Petal_01~30",
+        "Background_Asterisk_Rings",
+        "Background_Compass_Rays_01~16",
+        "SpeechBubble_Question, Sparkle_01~10",
+        "Prop_BookStack, Prop_Cup, Prop_Vase, Prop_Flowers, Prop_ScatteredPapers, Prop_Quill"
+      ],
+      "parameters": ["ParamStarGlow", "ParamPetalLoop", "ParamQuestion", "ParamAI_Glitch"],
+      "notes": "左侧角色信息卡、品牌 Logo、文字标语为第三方元素，需替换为原创文案；背景道具建议做成独立 scene item。"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "parameterCount": 24,
+  "bindings": {
+    "ParamAngleX": [
+      "Head_Base",
+      "Face_Base",
+      "Hair front/side compensation",
+      "Glasses parallax"
+    ],
+    "ParamAngleY": [
+      "Head_Base",
+      "Face_Base",
+      "Neck shadow",
+      "Glasses parallax"
+    ],
+    "ParamAngleZ": [
+      "Head_Base",
+      "Ahoge_01~04",
+      "Bangs",
+      "SideBraid_L/R",
+      "LongWisp_L/R"
+    ],
+    "ParamBodyAngleX": [
+      "Body_Torso_Base",
+      "Cape_L/R",
+      "Skirt_Front_Base",
+      "WaistSash"
+    ],
+    "ParamBodyAngleY": [
+      "Body_Torso_Base",
+      "Cape_L/R",
+      "BookStack"
+    ],
+    "ParamBodyAngleZ": [
+      "Body_Torso_Base",
+      "WatchChain_Link_01~20",
+      "Cape swing",
+      "Sash swing"
+    ],
+    "ParamEyeLOpen": [
+      "Eye_L_UpperLid",
+      "Eye_L_LowerLid",
+      "Eye_L_Lash_Upper"
+    ],
+    "ParamEyeROpen": [
+      "Eye_R_UpperLid",
+      "Eye_R_LowerLid",
+      "Eye_R_Lash_Upper"
+    ],
+    "ParamEyeBallX": [
+      "Eye_L_Iris_Base",
+      "Eye_R_Iris_Base",
+      "Highlights",
+      "Glasses_Lens_Reflection"
+    ],
+    "ParamEyeBallY": [
+      "Eye_L_Iris_Base",
+      "Eye_R_Iris_Base",
+      "Highlights",
+      "Glasses_Lens_Reflection"
+    ],
+    "ParamMouthOpenY": [
+      "Mouth_A",
+      "Mouth_I",
+      "Mouth_U",
+      "Mouth_E",
+      "Mouth_O",
+      "Mouth_Tongue",
+      "Mouth_Teeth"
+    ],
+    "ParamMouthForm": [
+      "Mouth_Line_Smile",
+      "Mouth_Line_Frown",
+      "Mouth_Line_Neutral",
+      "Mouth_Open_Smile"
+    ],
+    "ParamBreath": [
+      "Body_Chest_Breath_Highlight",
+      "Body_Chest_Breath_Shadow",
+      "Blouse_Base",
+      "Cape_Sway"
+    ],
+    "ParamHairFront": [
+      "Ahoge_01~04",
+      "Bangs"
+    ],
+    "ParamHairSide": [
+      "SideBraid_L_01~16",
+      "SideBraid_R_01~16",
+      "LongWisp_L_01~10",
+      "LongWisp_R_01~10"
+    ],
+    "ParamHairBack": [
+      "Hair_Back_Base",
+      "BackHair_Outer"
+    ],
+    "ParamRibbonSwing": [
+      "NeckBow_Tails",
+      "WaistSash_Tails",
+      "Bookmark_Ribbon"
+    ],
+    "ParamStarGlow": [
+      "StarEmblem_Glow",
+      "StarEmblem_Rays_01~12",
+      "Background_Asterisk_Rings"
+    ],
+    "ParamCapeSwing": [
+      "Cape_Left_Outer/Inner",
+      "Cape_Right_Outer/Inner"
+    ],
+    "ParamSkirtSwing": [
+      "Skirt_Front_Base",
+      "Skirt_Back_Base",
+      "Skirt_Lace_01~28",
+      "Skirt_Frill_01~36"
+    ],
+    "ParamSashSwing": [
+      "WaistSash_Base",
+      "WaistSash_Tails"
+    ],
+    "ParamArmL": [
+      "Arm_L_Upper",
+      "Arm_L_Fore",
+      "Hand_L_Palm",
+      "Fingers_L"
+    ],
+    "ParamArmR": [
+      "Arm_R_Upper",
+      "Arm_R_Fore",
+      "Hand_R_Palm",
+      "Fingers_R"
+    ],
+    "ParamHandPose": [
+      "Fingers_L_01~10",
+      "Fingers_R_01~10",
+      "Hand_L_Palm",
+      "Hand_R_Palm"
+    ],
+    "ParamBookTilt": [
+      "BookStack_Top",
+      "BookStack_Middle",
+      "BookStack_Bottom",
+      "Book_PageBlock"
+    ],
+    "ParamPageFlip": [
+      "Book_PageFlip_01~06",
+      "Bookmark_Ribbon"
+    ],
+    "ParamLegPose": [
+      "Leg_L_Base",
+      "Leg_R_Base",
+      "Sock_L",
+      "Sock_R",
+      "Shoe_L",
+      "Shoe_R"
+    ],
+    "ParamShoeStep": [
+      "Shoe_L",
+      "Shoe_R",
+      "Sock_Ruffle_L/R"
+    ],
+    "ParamWatchSwing": [
+      "PocketWatch_Body",
+      "WatchChain_Link_01~20",
+      "ChainTassel_01~06"
+    ],
+    "ParamPetalLoop": [
+      "FloatingPaper_01~12",
+      "Petal_01~30"
+    ],
+    "ParamQuestion": [
+      "SpeechBubble_Question"
+    ],
+    "ParamAI_Glitch": [
+      "Background_Asterisk_Rings",
+      "Sparkle_01~10",
+      "Glasses_Lens_Reflection"
+    ]
+  }
+}

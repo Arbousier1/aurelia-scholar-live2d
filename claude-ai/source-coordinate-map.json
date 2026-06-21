@@ -1,0 +1,49 @@
+{
+  "sourceImage": {
+    "width": 850,
+    "height": 1106,
+    "unit": "px",
+    "note": "坐标基于 850×1106 参考图预览手工标注，供画师第一轮切割/补画使用，不是最终蒙版。"
+  },
+  "commercialCleanup": [
+    { "id": "brand-logo-left", "bbox": [62, 77, 222, 197], "action": "替换为原创品牌标识或移除第三方文字" },
+    { "id": "profile-card-left", "bbox": [31, 244, 211, 470], "action": "替换角色信息卡文案为原创设定" },
+    { "id": "top-right-brand", "bbox": [700, 48, 815, 112], "action": "替换右上角第三方名称为原创世界观标签" },
+    { "id": "stamp-bottom-left", "bbox": [58, 995, 152, 1075], "action": "替换左下角第三方邮戳为原创印章" },
+    { "id": "left-vertical-copy", "bbox": [20, 120, 60, 920], "action": "移除/替换左侧竖排第三方宣传文字" },
+    { "id": "right-vertical-copy", "bbox": [790, 160, 830, 920], "action": "移除/替换右侧竖排第三方宣传文字" }
+  ],
+  "regions": [
+    { "id": "character-full", "group": "00_REFERENCE", "bbox": [150, 40, 720, 1080], "priority": "S", "cutType": "full silhouette", "notes": "主体角色区域；去除背景并重建被头发/服装/道具遮挡的身体。" },
+    { "id": "head-face", "group": "02_HEAD/Face", "bbox": [300, 110, 500, 340], "priority": "S", "cutType": "redraw required", "notes": "脸基底层，含额头、耳朵、下颌；需补画被刘海、眼镜、发饰遮挡处。" },
+    { "id": "eyes-glasses", "group": "03_FACE/Eyes_Glasses", "bbox": [320, 200, 480, 260], "priority": "S", "cutType": "separate transparent parts", "notes": "拆分眼镜框、镜片、反光、眼白、虹膜、瞳孔、高光、上下眼睑与睫毛。" },
+    { "id": "mouth-nose", "group": "03_FACE/Mouth_Nose", "bbox": [360, 265, 440, 315], "priority": "S", "cutType": "expression variants", "notes": "A/I/U/E/O 嘴型 + 微笑/抿嘴/惊讶等表情变体。" },
+    { "id": "ahoge", "group": "04_HAIR/Ahoge", "bbox": [375, 45, 455, 115], "priority": "S", "cutType": "independent physics", "notes": "顶部呆毛 3~4 根，根部分布在前发后方。" },
+    { "id": "bangs", "group": "04_HAIR/Bangs", "bbox": [270, 105, 515, 235], "priority": "S", "cutType": "strand split", "notes": "中刘海 + 左右侧刘海，按缕拆分，每缕需画内侧。" },
+    { "id": "side-hair-left", "group": "04_HAIR/Side_L", "bbox": [150, 160, 345, 890], "priority": "S", "cutType": "multi-chain physics", "notes": "左侧长编发 + 散发束；分前/中/后/末梢。" },
+    { "id": "side-hair-right", "group": "04_HAIR/Side_R", "bbox": [480, 150, 720, 910], "priority": "S", "cutType": "multi-chain physics", "notes": "右侧长编发 + 大卷散发；注意与披肩/背景花瓣分离。" },
+    { "id": "back-hair-mass", "group": "04_HAIR/Back", "bbox": [180, 120, 700, 960], "priority": "S", "cutType": "behind body layer", "notes": "后发基底层，在身体/披风后方；分基底与大量末梢发束。" },
+    { "id": "head-flower-left", "group": "06_ACCESSORY/HeadFlower_L", "bbox": [470, 120, 545, 195], "priority": "S", "cutType": "petal/ribbon split", "notes": "左上方发饰花朵，花瓣、花心、阴影、高光独立。" },
+    { "id": "head-flower-right", "group": "06_ACCESSORY/HeadFlower_R", "bbox": [540, 130, 620, 225], "priority": "S", "cutType": "petal/ribbon split", "notes": "右侧发饰花朵 + 黑色发带，花瓣、花心、发带结/尾独立。" },
+    { "id": "neck-bow-star", "group": "05_OUTFIT/NeckBow_Star", "bbox": [325, 330, 475, 435], "priority": "S", "cutType": "symbol replacement", "notes": "黑色领结、胸前星芒标识、发光层；使用原创商业标识替换第三方元素。" },
+    { "id": "left-arm-hand", "group": "07_HANDS_ARMS/Arm_L", "bbox": [255, 275, 385, 530], "priority": "S", "cutType": "jointed fingers", "notes": "左手托腮/触脸姿势，手指与手掌需独立拆分。" },
+    { "id": "right-arm-hand", "group": "07_HANDS_ARMS/Arm_R", "bbox": [425, 310, 595, 610], "priority": "S", "cutType": "book grip", "notes": "右手抱书，手指与书边缘分离。" },
+    { "id": "book-prop", "group": "06_ACCESSORY/Book", "bbox": [410, 340, 570, 550], "priority": "S", "cutType": "hinged prop", "notes": "书堆：顶/中/底三本书 + 封面/书脊/书页/书签。" },
+    { "id": "blouse-sleeves", "group": "05_OUTFIT/Blouse_Sleeves", "bbox": [220, 340, 605, 690], "priority": "S", "cutType": "cloth layers", "notes": "米白衬衫、泡泡袖、袖口蕾丝、胸前荷叶边、肩部褶皱。" },
+    { "id": "cape-left", "group": "05_OUTFIT/Cape_L", "bbox": [150, 360, 365, 1050], "priority": "S", "cutType": "transparent cloth", "notes": "左侧披肩/外搭，分外层/内层/边缘/纹理/高光/阴影。" },
+    { "id": "cape-right", "group": "05_OUTFIT/Cape_R", "bbox": [515, 350, 725, 1020], "priority": "S", "cutType": "transparent cloth", "notes": "右侧披肩/外搭，分多层摆动链。" },
+    { "id": "waist-sash", "group": "05_OUTFIT/WaistSash", "bbox": [260, 540, 510, 620], "priority": "S", "cutType": "ribbon physics", "notes": "腰部蝴蝶结/腰带，结、左右尾、阴影独立。" },
+    { "id": "skirt-lace", "group": "05_OUTFIT/Skirt_Lace", "bbox": [235, 560, 525, 790], "priority": "S", "cutType": "lace/frill split", "notes": "前裙、后裙、多层荷叶边、蕾丝边、内衬阴影。" },
+    { "id": "watch-chain", "group": "06_ACCESSORY/PocketWatch", "bbox": [465, 515, 555, 730], "priority": "A", "cutType": "pendulum physics", "notes": "怀表本体、表盘、指针、表链链节、流苏独立。" },
+    { "id": "legs", "group": "08_LEGS_SHOES/Legs", "bbox": [295, 650, 515, 1010], "priority": "S", "cutType": "pose capable", "notes": "左右大腿、膝盖、小腿；补画裙底/袜套遮挡处。" },
+    { "id": "sock-left", "group": "08_LEGS_SHOES/Sock_L", "bbox": [305, 850, 415, 1020], "priority": "A", "cutType": "ruffle split", "notes": "左腿袜套褶皱、袜口荷叶边、星形小标志。" },
+    { "id": "sock-right", "group": "08_LEGS_SHOES/Sock_R", "bbox": [415, 860, 505, 1000], "priority": "A", "cutType": "ruffle split", "notes": "右腿袜套褶皱、袜口荷叶边。" },
+    { "id": "shoe-left", "group": "08_LEGS_SHOES/Shoe_L", "bbox": [285, 970, 405, 1090], "priority": "A", "cutType": "shoe parts", "notes": "左鞋鞋面、鞋底、搭扣、鞋头高光、蝴蝶结。" },
+    { "id": "shoe-right", "group": "08_LEGS_SHOES/Shoe_R", "bbox": [400, 980, 525, 1090], "priority": "A", "cutType": "shoe parts", "notes": "右鞋鞋面、鞋底、搭扣、鞋头高光。" },
+    { "id": "garter-flowers", "group": "08_LEGS_SHOES/GarterFlower", "bbox": [300, 720, 390, 790], "priority": "A", "cutType": "petal/ribbon split", "notes": "左腿大腿花饰，花瓣、花心、丝带尾独立。" },
+    { "id": "floating-papers-petals", "group": "09_EFFECTS/Papers_Petals", "bbox": [120, 200, 740, 930], "priority": "B", "cutType": "scene item particles", "notes": "飘散纸张与花瓣，做成循环前景/背景粒子。" },
+    { "id": "right-props", "group": "10_SCENE/Books_Cup_Vase", "bbox": [590, 760, 825, 1085], "priority": "B", "cutType": "separate scene props", "notes": "右侧书堆、杯子、花瓶、花束应作为独立场景道具，不并入主模型。" },
+    { "id": "bottom-props", "group": "10_SCENE/Papers_Quill", "bbox": [120, 960, 520, 1095], "priority": "B", "cutType": "separate scene props", "notes": "底部散落纸张、羽毛笔作为场景道具。" },
+    { "id": "background-asterisk", "group": "10_SCENE/Asterisk_Backdrop", "bbox": [600, 40, 800, 250], "priority": "B", "cutType": "background optional", "notes": "右上角星形/罗盘背景装饰， redraw 为可选背景层。" }
+  ]
+}

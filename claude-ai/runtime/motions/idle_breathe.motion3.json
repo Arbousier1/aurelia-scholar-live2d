@@ -1,0 +1,31 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 3.0,
+    "Loop": true,
+    "CurveCount": 3
+  },
+  "Curves": [
+    {
+      "Target": "Parameter",
+      "Id": "ParamBreath",
+      "Segments": [
+        0, 0, 1, 1.5, 0.05, 3, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamBodyAngleY",
+      "Segments": [
+        0, 0, 1, 1.5, 0.02, 3, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamCapeSwing",
+      "Segments": [
+        0, 0, 1, 1.5, 0.03, 3, 0
+      ]
+    }
+  ]
+}

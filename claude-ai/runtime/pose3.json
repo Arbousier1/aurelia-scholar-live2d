@@ -1,0 +1,28 @@
+{
+  "Type": "Live2D Pose",
+  "FadeInTime": 0.5,
+  "Groups": [
+    [
+      { "Id": "PartArmLDefault", "Link": ["PartHandLDefault"] },
+      { "Id": "PartArmLTouchFace", "Link": ["PartHandLTouchFace"] }
+    ],
+    [
+      { "Id": "PartArmRDefault", "Link": ["PartHandRDefault"] },
+      { "Id": "PartArmRWave", "Link": ["PartHandRWave"] },
+      { "Id": "PartArmRBook", "Link": ["PartHandRBook"] }
+    ],
+    [
+      { "Id": "PartMouthNeutral" },
+      { "Id": "PartMouthHappy" },
+      { "Id": "PartMouthSurprised" }
+    ],
+    [
+      { "Id": "PartBookClosed" },
+      { "Id": "PartBookFlip" }
+    ],
+    [
+      { "Id": "PartGlassesNormal" },
+      { "Id": "PartGlassesGlow" }
+    ]
+  ]
+}

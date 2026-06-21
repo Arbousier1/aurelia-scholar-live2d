@@ -1,0 +1,102 @@
+{
+  "character": "Claude AI 拟人角色",
+  "note": "将前端/PSD 层级映射到 Cubism Part 与参数名，供建模师与开发对照。",
+  "mappings": [
+    {
+      "frontendLayer": "head-face",
+      "psdGroup": "02_HEAD",
+      "cubismParts": ["Head_Base", "Face_Base", "Ear_L", "Ear_R"],
+      "parameters": ["ParamAngleX", "ParamAngleY", "ParamAngleZ"]
+    },
+    {
+      "frontendLayer": "eyes-glasses",
+      "psdGroup": "03_FACE",
+      "cubismParts": ["Eye_L_White", "Eye_L_Iris", "Eye_L_Highlight", "Eye_R_White", "Eye_R_Iris", "Eye_R_Highlight", "Glasses_Frame", "Glasses_Lens", "Glasses_Reflection"],
+      "parameters": ["ParamEyeLOpen", "ParamEyeROpen", "ParamEyeBallX", "ParamEyeBallY"]
+    },
+    {
+      "frontendLayer": "mouth",
+      "psdGroup": "03_FACE",
+      "cubismParts": ["Mouth_A", "Mouth_I", "Mouth_U", "Mouth_E", "Mouth_O", "Mouth_Smile", "Mouth_Teeth", "Mouth_Tongue"],
+      "parameters": ["ParamMouthOpenY", "ParamMouthForm"]
+    },
+    {
+      "frontendLayer": "hair-front",
+      "psdGroup": "04_HAIR",
+      "cubismParts": ["Ahoge_01~04", "Bang_Center_01~10", "Bang_Left_01~10", "Bang_Right_01~10"],
+      "parameters": ["ParamHairFront", "ParamAngleZ"]
+    },
+    {
+      "frontendLayer": "hair-side",
+      "psdGroup": "04_HAIR",
+      "cubismParts": ["SideBraid_L_01~16", "SideBraid_R_01~16", "LongWisp_L_01~10", "LongWisp_R_01~10"],
+      "parameters": ["ParamHairSide", "ParamAngleX", "ParamAngleZ"]
+    },
+    {
+      "frontendLayer": "hair-back",
+      "psdGroup": "04_HAIR",
+      "cubismParts": ["BackHair_Base", "BackHair_Inner", "BackHair_Outer"],
+      "parameters": ["ParamHairBack", "ParamBodyAngleZ"]
+    },
+    {
+      "frontendLayer": "head-flowers",
+      "psdGroup": "06_ACCESSORY",
+      "cubismParts": ["HeadFlower_L_Petals", "HeadFlower_L_Center", "HeadFlower_R_Petals", "HeadFlower_R_Center", "BlackRibbon_Knot", "BlackRibbon_Tail_L/R"],
+      "parameters": ["ParamHairFront", "ParamAngleZ"]
+    },
+    {
+      "frontendLayer": "upper-outfit",
+      "psdGroup": "05_OUTFIT",
+      "cubismParts": ["Blouse_Base", "Collar_L/R", "Collar_Lace", "Chest_Ruffle", "Sleeve_L_Puff", "Sleeve_R_Puff", "Cuff_Lace"],
+      "parameters": ["ParamBreath", "ParamBodyAngleX", "ParamBodyAngleY"]
+    },
+    {
+      "frontendLayer": "neck-bow-star",
+      "psdGroup": "05_OUTFIT",
+      "cubismParts": ["NeckBow_Knot", "NeckBow_Loop_L/R", "NeckBow_Tail_L/R", "StarEmblem_Center", "StarEmblem_Rays", "StarEmblem_Glow"],
+      "parameters": ["ParamRibbonSwing", "ParamStarGlow", "ParamBreath"]
+    },
+    {
+      "frontendLayer": "cape",
+      "psdGroup": "05_OUTFIT",
+      "cubismParts": ["Cape_Back_Base", "Cape_L_Outer", "Cape_L_Inner", "Cape_L_Edge", "Cape_R_Outer", "Cape_R_Inner", "Cape_R_Edge"],
+      "parameters": ["ParamCapeSwing", "ParamBodyAngleX", "ParamBodyAngleZ"]
+    },
+    {
+      "frontendLayer": "skirt-sash",
+      "psdGroup": "05_OUTFIT",
+      "cubismParts": ["WaistSash_Base", "WaistSash_Bow", "WaistSash_Tail_L/R", "Skirt_Front_Base", "Skirt_Back_Base", "Skirt_Lace_01~28", "Skirt_Frill_01~36"],
+      "parameters": ["ParamSkirtSwing", "ParamSashSwing", "ParamBodyAngleX", "ParamBodyAngleZ"]
+    },
+    {
+      "frontendLayer": "arms",
+      "psdGroup": "07_HANDS_ARMS",
+      "cubismParts": ["Arm_L_Upper", "Arm_L_Fore", "Hand_L_Palm", "Fingers_L", "Arm_R_Upper", "Arm_R_Fore", "Hand_R_Palm", "Fingers_R"],
+      "parameters": ["ParamArmL", "ParamArmR", "ParamHandPose"]
+    },
+    {
+      "frontendLayer": "book",
+      "psdGroup": "06_ACCESSORY",
+      "cubismParts": ["BookStack_Top", "BookStack_Middle", "BookStack_Bottom", "Book_PageBlock", "Book_PageFlip_01~06", "Bookmark_Ribbon"],
+      "parameters": ["ParamBookTilt", "ParamPageFlip", "ParamArmR"]
+    },
+    {
+      "frontendLayer": "legs",
+      "psdGroup": "08_LEGS_SHOES",
+      "cubismParts": ["Leg_L_Base", "Leg_R_Base", "GarterFlower_L", "Sock_L_Base", "Sock_L_Ruffle", "Sock_R_Base", "Sock_R_Ruffle", "Shoe_L", "Shoe_R"],
+      "parameters": ["ParamLegPose", "ParamShoeStep"]
+    },
+    {
+      "frontendLayer": "watch-chain",
+      "psdGroup": "06_ACCESSORY",
+      "cubismParts": ["PocketWatch_Body", "PocketWatch_Rim", "PocketWatch_Glass", "PocketWatch_Hands", "WatchChain_Link_01~20", "ChainTassel_01~06"],
+      "parameters": ["ParamWatchSwing", "ParamBodyAngleZ"]
+    },
+    {
+      "frontendLayer": "effects-bg",
+      "psdGroup": "09_EFFECTS / 10_SCENE",
+      "cubismParts": ["FloatingPaper_01~12", "Petal_01~30", "Sparkle_01~10", "Prop_BookStack", "Prop_Cup", "Prop_Vase_Flowers", "Prop_ScatteredPapers", "Prop_Quill", "Asterisk_Backdrop"],
+      "parameters": ["ParamStarGlow", "ParamPetalLoop", "ParamQuestion", "ParamAI_Glitch"]
+    }
+  ]
+}

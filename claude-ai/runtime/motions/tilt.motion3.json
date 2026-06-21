@@ -1,0 +1,24 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 2.0,
+    "Loop": false,
+    "CurveCount": 2
+  },
+  "Curves": [
+    {
+      "Target": "Parameter",
+      "Id": "ParamAngleX",
+      "Segments": [
+        0, 0, 1, 0.6, 0.18, 1, 1.4, 0.18, 2, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamAngleZ",
+      "Segments": [
+        0, 0, 1, 0.6, 0.1, 1, 1.4, 0.1, 2, 0
+      ]
+    }
+  ]
+}

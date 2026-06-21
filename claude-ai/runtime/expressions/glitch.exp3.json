@@ -1,0 +1,8 @@
+{
+  "Type": "Live2D Expression",
+  "Parameters": [
+    { "Id": "ParamAI_Glitch", "Value": 1.0 },
+    { "Id": "ParamStarGlow", "Value": 1.0 },
+    { "Id": "ParamMouthForm", "Value": 0.0 }
+  ]
+}

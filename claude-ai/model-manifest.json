@@ -1,0 +1,42 @@
+{
+  "name": "ClaudeAIProtype",
+  "type": "browser-live2d-decomposition-workbench",
+  "version": "1.0.0",
+  "entry": "claude-ai/index.html",
+  "preview": "claude-ai/preview.png",
+  "expressions": [
+    "default",
+    "smile",
+    "shy",
+    "cry",
+    "serious",
+    "glitch"
+  ],
+  "motions": [
+    "idle_breathe",
+    "wave",
+    "bow",
+    "tilt",
+    "book",
+    "touch_face"
+  ],
+  "layerGroups": [
+    "head-face",
+    "hair",
+    "upper-outfit",
+    "cape-skirt",
+    "arms-book",
+    "legs-accessories",
+    "watch-chain",
+    "effects-bg"
+  ],
+  "notes": "Claude AI 拟人角色专业拆解工作台；非最终 Cubism .cmo3，也非简化角色绘制。",
+  "runtime": {
+    "model3": "claude-ai/runtime/claude-ai.model3.json",
+    "physics": "claude-ai/runtime/physics.json",
+    "pose": "claude-ai/runtime/pose3.json",
+    "layerMap": "claude-ai/layer-map.json",
+    "qaChecklist": "claude-ai/QA_CHECKLIST.md"
+  },
+  "decompositionPlan": "claude-ai/decomposition-plan.json"
+}

@@ -1,0 +1,31 @@
+{
+  "Version": 3,
+  "Meta": {
+    "Duration": 2.5,
+    "Loop": false,
+    "CurveCount": 3
+  },
+  "Curves": [
+    {
+      "Target": "Parameter",
+      "Id": "ParamBookTilt",
+      "Segments": [
+        0, 0, 1, 0.5, 0.25, 1, 1.25, -0.15, 1, 2.0, 0.2, 2.5, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamPageFlip",
+      "Segments": [
+        0, 0, 1, 0.8, 0.6, 1, 1.6, 0, 2.5, 0
+      ]
+    },
+    {
+      "Target": "Parameter",
+      "Id": "ParamArmR",
+      "Segments": [
+        0, 0, 1, 0.5, 0.1, 1, 1.5, 0.05, 2.5, 0
+      ]
+    }
+  ]
+}
