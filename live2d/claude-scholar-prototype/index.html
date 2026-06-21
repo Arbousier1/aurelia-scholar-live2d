@@ -3,400 +3,178 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Claude Scholar Live2D Prototype</title>
+  <title>Claude Scholar Live2D 专业拆解工作台</title>
   <style>
     :root {
-      --orange: #df8155;
-      --orange-dark: #a95535;
-      --cream: #fff6ec;
-      --paper: #f8eadb;
-      --line: #8f5f4a;
-      --shadow: rgba(97, 48, 24, 0.25);
-      --glow: rgba(255, 178, 105, 0.72);
-      --eye-open: 1;
-      --smile: 0;
-      --blush: 0;
-      --spark: 0;
-      --tear: 0;
-      --glasses: 0;
-      --glitch: 0;
+      --ink: #563628;
+      --muted: #8f6a57;
+      --orange: #d9784c;
+      --orange-2: #f0a16d;
+      --cream: #fff8f1;
+      --paper: #f8e5d4;
+      --line: rgba(141, 84, 54, .24);
+      --shadow: rgba(94, 47, 25, .15);
     }
-
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: minmax(320px, 1fr) 320px;
-      gap: 0;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 72% 15%, rgba(238, 150, 101, 0.22), transparent 28%),
-        linear-gradient(135deg, #fffaf5, #f4dfcd 52%, #ffe9dc);
-      color: #5d3b2d;
+        radial-gradient(circle at 72% 10%, rgba(217, 120, 76, .18), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(217, 120, 76, .12), transparent 30%),
+        linear-gradient(135deg, #fffaf6, #f7e2d1);
       font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-      overflow-x: hidden;
     }
-
-    .stage {
-      position: relative;
+    header {
+      padding: 42px clamp(18px, 5vw, 72px) 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 248, 241, .72);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    h1 { margin: 0; font-size: clamp(28px, 5vw, 58px); color: var(--orange); letter-spacing: -.04em; }
+    .subtitle { margin: 10px 0 0; max-width: 980px; color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .layout {
       display: grid;
-      place-items: center;
-      min-height: 100vh;
-      padding: 28px;
+      grid-template-columns: minmax(320px, 470px) 1fr;
+      gap: 24px;
+      padding: 28px clamp(18px, 5vw, 72px) 60px;
+    }
+    .reference-card, .panel, .group-card {
+      background: rgba(255, 250, 246, .82);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 18px 44px var(--shadow);
+    }
+    .reference-card { padding: 18px; position: sticky; top: 152px; align-self: start; }
+    .reference-frame {
+      aspect-ratio: 3 / 4.35;
+      border-radius: 22px;
       overflow: hidden;
-    }
-
-    .stage::before,
-    .stage::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(169, 85, 53, 0.18);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .stage::before { width: 520px; height: 520px; right: 8%; top: 5%; }
-    .stage::after { width: 380px; height: 380px; left: 8%; bottom: 10%; }
-
-    .model-shell {
-      width: min(72vw, 740px);
-      max-height: 96vh;
-      aspect-ratio: 3 / 4;
       position: relative;
-      filter: drop-shadow(0 28px 36px rgba(113, 58, 31, 0.26));
+      background:
+        linear-gradient(90deg, transparent 49.8%, rgba(169, 88, 52, .16) 50%, transparent 50.2%),
+        linear-gradient(0deg, transparent 49.8%, rgba(169, 88, 52, .16) 50%, transparent 50.2%),
+        radial-gradient(circle at 64% 15%, transparent 0 16%, rgba(169, 88, 52, .18) 16.2%, transparent 16.6%),
+        linear-gradient(160deg, #fff8f0, #f6d9c4);
+      border: 1px solid rgba(169, 88, 52, .18);
     }
-
-    svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-      user-select: none;
+    .silhouette {
+      position: absolute;
+      inset: 8% 18% 5%;
+      border-radius: 46% 46% 34% 34%;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(235, 140, 95, .72) 0 18%, transparent 18.5%),
+        linear-gradient(90deg, rgba(185, 95, 58, .62), rgba(255,255,255,.10), rgba(185, 95, 58, .62));
+      clip-path: polygon(48% 0, 56% 4%, 64% 12%, 74% 31%, 89% 72%, 79% 100%, 58% 78%, 50% 95%, 42% 78%, 21% 100%, 11% 72%, 26% 31%, 36% 12%);
+      filter: drop-shadow(0 20px 24px rgba(125, 70, 42, .25));
     }
-
-    .layer { transform-box: fill-box; transform-origin: center; }
-    .breath { animation: breath 4.2s ease-in-out infinite; }
-    .hair-front { animation: hairFront 3.2s ease-in-out infinite; }
-    .hair-side-l { animation: hairSideL 4.6s ease-in-out infinite; }
-    .hair-side-r { animation: hairSideR 4.8s ease-in-out infinite; }
-    .hair-back { animation: hairBack 5.8s ease-in-out infinite; }
-    .cape-l { animation: capeL 5.4s ease-in-out infinite; }
-    .cape-r { animation: capeR 5.7s ease-in-out infinite; }
-    .ribbon { animation: ribbon 2.8s ease-in-out infinite; }
-    .watch { animation: watch 3.8s ease-in-out infinite; }
-    .paper { animation: floatPaper 8s ease-in-out infinite; opacity: 0.72; }
-    .sparkle { opacity: var(--spark); animation: sparkle 1.6s ease-in-out infinite; }
-    .tear { opacity: var(--tear); animation: tearDrop 2.4s ease-in-out infinite; }
-    .glitch { opacity: var(--glitch); mix-blend-mode: multiply; animation: glitch 0.2s steps(2) infinite; }
-    .glasses-flash { opacity: var(--glasses); animation: flash 1.4s ease-in-out infinite; }
-    .blush { opacity: var(--blush); }
-    .eye-open { transform: scaleY(var(--eye-open)); transform-box: fill-box; transform-origin: center; transition: transform .18s ease; }
-    .mouth-smile { opacity: calc(1 - var(--smile)); }
-    .mouth-happy { opacity: var(--smile); }
-
-    .model-shell[data-motion="wave"] .arm-wave { animation: wave 0.9s ease-in-out 3; transform-origin: 77% 42%; }
-    .model-shell[data-motion="bow"] .body-all { animation: bow 1.8s ease-in-out 1; transform-origin: 50% 72%; }
-    .model-shell[data-motion="tilt"] .head-all { animation: tilt 1.8s ease-in-out 1; transform-origin: 50% 35%; }
-    .model-shell[data-motion="book"] .book { animation: bookFlip 1.4s ease-in-out 1; transform-origin: 48% 53%; }
-
-    @keyframes breath { 0%,100%{ transform: translateY(0) scaleY(1);} 50%{ transform: translateY(-5px) scaleY(1.012);} }
-    @keyframes hairFront { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(1.4deg) translateX(2px);} }
-    @keyframes hairSideL { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(-3deg) translateX(-4px);} }
-    @keyframes hairSideR { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(3deg) translateX(4px);} }
-    @keyframes hairBack { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(1.8deg) translateY(5px);} }
-    @keyframes capeL { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(-2.6deg) translateX(-8px);} }
-    @keyframes capeR { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(2.4deg) translateX(8px);} }
-    @keyframes ribbon { 0%,100%{ transform: rotate(0);} 50%{ transform: rotate(3deg);} }
-    @keyframes watch { 0%,100%{ transform: rotate(-4deg);} 50%{ transform: rotate(6deg);} }
-    @keyframes floatPaper { 0%,100%{ transform: translateY(0) rotate(0deg);} 50%{ transform: translateY(-26px) rotate(10deg);} }
-    @keyframes sparkle { 0%,100%{ transform: scale(.8); opacity: calc(var(--spark) * .4);} 50%{ transform: scale(1.2); opacity: var(--spark);} }
-    @keyframes tearDrop { 0%{ transform: translateY(-8px); } 100%{ transform: translateY(24px); } }
-    @keyframes glitch { 0%{ transform: translateX(-2px);} 100%{ transform: translateX(2px);} }
-    @keyframes flash { 0%,100%{ opacity: calc(var(--glasses) * .25);} 50%{ opacity: var(--glasses);} }
-    @keyframes wave { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(-16deg);} }
-    @keyframes bow { 0%,100%{ transform: rotate(0deg) translateY(0);} 45%{ transform: rotate(5deg) translateY(26px);} }
-    @keyframes tilt { 0%,100%{ transform: rotate(0deg);} 50%{ transform: rotate(-10deg);} }
-    @keyframes bookFlip { 0%,100%{ transform: rotateY(0deg);} 50%{ transform: rotateY(28deg) rotate(-2deg);} }
-
-    .panel {
-      min-height: 100vh;
-      padding: 28px 24px;
-      background: rgba(255, 248, 241, 0.82);
-      border-left: 1px solid rgba(169, 85, 53, 0.18);
-      backdrop-filter: blur(16px);
-      box-shadow: -20px 0 50px rgba(115, 58, 29, 0.12);
-    }
-    .panel h1 { margin: 0 0 8px; font-size: 23px; color: #a95535; }
-    .panel p { margin: 0 0 18px; line-height: 1.65; font-size: 13px; }
-    .group { margin: 22px 0; }
-    .group h2 { font-size: 14px; color: #7f4a34; letter-spacing: .08em; text-transform: uppercase; }
-    .buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    button {
-      appearance: none;
-      border: 1px solid rgba(169, 85, 53, 0.28);
-      border-radius: 999px;
-      padding: 10px 12px;
-      color: #733f2b;
-      background: linear-gradient(180deg, #fffaf5, #f7dcc7);
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 8px 16px rgba(169, 85, 53, 0.12);
-      transition: transform .16s ease, box-shadow .16s ease;
-    }
-    button:hover { transform: translateY(-2px); box-shadow: 0 12px 20px rgba(169, 85, 53, 0.18); }
-    .note {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(223, 129, 85, 0.12);
-      border: 1px solid rgba(223, 129, 85, 0.22);
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 880px) {
-      body { grid-template-columns: 1fr; }
-      .panel { min-height: auto; border-left: 0; border-top: 1px solid rgba(169, 85, 53, 0.18); }
-      .model-shell { width: min(96vw, 660px); }
+    .cut-line { position: absolute; border: 2px dashed rgba(133, 73, 45, .55); border-radius: 999px; color: #fff; background: var(--orange); padding: 4px 8px; font-size: 12px; font-weight: 800; }
+    .cut-line:nth-child(2) { left: 42%; top: 12%; }
+    .cut-line:nth-child(3) { left: 22%; top: 33%; }
+    .cut-line:nth-child(4) { right: 18%; top: 39%; }
+    .cut-line:nth-child(5) { left: 37%; top: 55%; }
+    .cut-line:nth-child(6) { right: 24%; top: 65%; }
+    .cut-line:nth-child(7) { left: 38%; bottom: 8%; }
+    .reference-note { margin: 16px 4px 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .panel { padding: 22px; margin-bottom: 22px; }
+    .panel h2 { margin: 0 0 12px; color: #9f5636; font-size: 20px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .stat { padding: 14px; border-radius: 18px; background: #fff3e9; border: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 26px; color: var(--orange); }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .groups { display: grid; gap: 16px; }
+    .group-card { padding: 20px; }
+    .group-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; margin-bottom: 14px; }
+    .group-head h3 { margin: 0; color: #7a3f2d; font-size: 20px; }
+    .badge { padding: 5px 10px; border-radius: 999px; background: var(--orange); color: #fff; font-size: 12px; font-weight: 900; }
+    .cols { display: grid; grid-template-columns: 1.3fr .9fr; gap: 16px; }
+    ul { margin: 0; padding-left: 18px; line-height: 1.8; }
+    li { margin: 3px 0; }
+    code { color: #9f5636; background: #fff0e5; padding: 2px 5px; border-radius: 6px; }
+    .params { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+    .param { font-size: 12px; border: 1px solid var(--line); color: #8b4f38; background: #fff9f4; padding: 6px 8px; border-radius: 999px; }
+    .note { color: var(--muted); line-height: 1.75; font-size: 13px; }
+    .warning { border-left: 5px solid var(--orange); background: #fff2e8; padding: 14px 16px; border-radius: 14px; line-height: 1.75; color: #70432f; }
+    @media (max-width: 920px) {
+      header { position: static; }
+      .layout { grid-template-columns: 1fr; }
+      .reference-card { position: static; }
+      .stats, .cols { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main class="stage" aria-label="Live2D 风格角色舞台">
-    <div class="model-shell" id="model" data-expression="default" data-motion="idle">
-      <svg viewBox="0 0 720 960" role="img" aria-label="橙白色 AI 学者少女 Live2D 原型">
-        <defs>
-          <linearGradient id="skin" x1="0" x2="0" y1="0" y2="1">
-            <stop stop-color="#ffe4d4" />
-            <stop offset="1" stop-color="#f5bfa8" />
-          </linearGradient>
-          <linearGradient id="hair" x1="0" x2="1" y1="0" y2="1">
-            <stop stop-color="#f8b188" />
-            <stop offset=".52" stop-color="#e77f58" />
-            <stop offset="1" stop-color="#b85b3d" />
-          </linearGradient>
-          <linearGradient id="cape" x1="0" x2="1" y1="0" y2="1">
-            <stop stop-color="#f8c49c" stop-opacity=".84" />
-            <stop offset="1" stop-color="#b35d39" stop-opacity=".66" />
-          </linearGradient>
-          <radialGradient id="eye" cx="50%" cy="45%" r="60%">
-            <stop stop-color="#ffe6bb" />
-            <stop offset=".62" stop-color="#c57a4c" />
-            <stop offset="1" stop-color="#6b3d2d" />
-          </radialGradient>
-          <filter id="soft"><feGaussianBlur stdDeviation="8" /></filter>
-        </defs>
+  <header>
+    <h1>Live2D 专业拆解工作台</h1>
+    <p class="subtitle">针对参考图的真实生产拆分方案：不再用简陋 SVG 小人冒充成品，而是把原图应拆的部位、PSD 层级、Cubism 参数、物理组和交付注意事项清楚列出来，供画师重绘拆层与建模师绑定。</p>
+  </header>
 
-        <g class="layer body-all">
-          <g class="layer hair-back">
-            <path d="M250 205 C155 315 148 615 221 845 C265 760 285 620 278 420 C290 640 326 795 363 887 C407 780 421 600 410 402 C443 596 486 744 552 843 C604 638 579 325 466 210 C412 155 307 152 250 205Z" fill="url(#hair)" opacity=".92" />
-            <path d="M178 475 C122 610 141 755 205 887 C233 752 230 610 222 472Z" fill="#c16845" opacity=".64" />
-            <path d="M548 468 C599 630 590 760 521 884 C503 716 504 600 500 470Z" fill="#c16845" opacity=".58" />
-          </g>
+  <main class="layout">
+    <aside class="reference-card">
+      <div class="reference-frame" aria-label="参考图拆分区域示意">
+        <div class="silhouette"></div>
+        <span class="cut-line">头脸</span>
+        <span class="cut-line">左发</span>
+        <span class="cut-line">右发</span>
+        <span class="cut-line">书本</span>
+        <span class="cut-line">怀表</span>
+        <span class="cut-line">腿鞋</span>
+      </div>
+      <p class="reference-note">此图是拆分区域示意，不是成品绘制。真正 Live2D 需要基于原始高清图进行补画、重绘和分层；单张压缩截图无法自动变成合格 PSD 分层。</p>
+    </aside>
 
-          <g class="layer cape-l">
-            <path d="M256 390 C151 463 123 647 143 876 C232 831 278 690 292 450Z" fill="url(#cape)" />
-            <path d="M173 522 C210 650 223 752 207 842" fill="none" stroke="#fff1e6" stroke-width="5" opacity=".52" />
-          </g>
-          <g class="layer cape-r">
-            <path d="M450 385 C573 470 597 665 551 885 C478 819 428 664 420 447Z" fill="url(#cape)" />
-            <path d="M520 526 C482 650 474 760 492 845" fill="none" stroke="#fff1e6" stroke-width="5" opacity=".46" />
-          </g>
+    <section>
+      <div class="panel">
+        <h2>生产目标</h2>
+        <p class="warning">目标是按市面高规格模型拆：长发多物理链、透明披肩单独纹理/阴影/高光、眼镜独立反光、书本可翻页、手指可动、怀表链条物理、至少 16 表情与 10 动作。当前页面是拆解工单，不再展示低质量角色绘制。</p>
+        <div class="stats">
+          <div class="stat"><strong>180+</strong><span>建议 PSD 图层</span></div>
+          <div class="stat"><strong>16+</strong><span>表情目标</span></div>
+          <div class="stat"><strong>10+</strong><span>动作目标</span></div>
+          <div class="stat"><strong>9</strong><span>物理组目标</span></div>
+        </div>
+      </div>
 
-          <g class="layer breath">
-            <path d="M278 392 C324 370 397 370 444 394 C466 473 465 598 440 705 C394 726 317 728 270 705 C246 590 247 475 278 392Z" fill="#fff2e6" stroke="#9d6048" stroke-width="3" />
-            <path d="M284 522 C320 546 392 548 435 521 L463 715 C406 760 303 756 246 715Z" fill="#fff9f2" />
-            <path d="M264 592 C316 625 400 632 456 591 C454 640 449 681 440 715 C395 738 313 740 270 714 C262 675 258 633 264 592Z" fill="#f4d2bd" opacity=".52" />
-            <g class="layer ribbon">
-              <path d="M330 404 C291 372 260 379 239 414 C277 438 304 443 334 421Z" fill="#5b342b" />
-              <path d="M366 404 C409 374 438 383 458 416 C418 439 391 445 360 421Z" fill="#5b342b" />
-              <circle cx="349" cy="414" r="18" fill="var(--orange)" />
-              <path d="M350 388 L356 440 M323 414 L376 414 M333 395 L367 432 M368 396 L330 432" stroke="#ffe4c8" stroke-width="5" stroke-linecap="round" />
-            </g>
-          </g>
-
-          <g class="layer arm-wave">
-            <path d="M458 420 C535 445 575 505 594 582" fill="none" stroke="url(#skin)" stroke-width="42" stroke-linecap="round" />
-            <path d="M584 570 C615 590 628 622 615 645 C589 632 574 607 584 570Z" fill="url(#skin)" stroke="#9d6048" stroke-width="2" />
-          </g>
-          <g class="layer">
-            <path d="M260 420 C210 458 199 529 215 590" fill="none" stroke="url(#skin)" stroke-width="40" stroke-linecap="round" />
-            <path d="M216 588 C238 600 261 625 255 651 C224 650 204 625 216 588Z" fill="url(#skin)" stroke="#9d6048" stroke-width="2" />
-          </g>
-
-          <g class="layer book">
-            <path d="M306 505 L452 478 L474 621 L326 651Z" fill="#6e4635" stroke="#4e3026" stroke-width="4" />
-            <path d="M324 523 L435 502 L452 603 L339 628Z" fill="#8e5f45" opacity=".9" />
-            <path d="M376 518 L390 607" stroke="#d8b18f" stroke-width="3" />
-            <path d="M348 560 C376 548 410 546 438 552" stroke="#cfa487" stroke-width="4" fill="none" />
-          </g>
-
-          <g class="layer watch">
-            <path d="M438 633 C468 668 468 694 452 720" fill="none" stroke="#9f6b3d" stroke-width="4" stroke-dasharray="6 5" />
-            <circle cx="450" cy="728" r="28" fill="#f9ead6" stroke="#9f6b3d" stroke-width="5" />
-            <path d="M450 728 L450 711 M450 728 L464 734" stroke="#9f6b3d" stroke-width="3" stroke-linecap="round" />
-          </g>
-
-          <g class="layer">
-            <path d="M300 703 C286 778 284 838 300 905" fill="none" stroke="url(#skin)" stroke-width="48" stroke-linecap="round" />
-            <path d="M405 705 C423 780 414 842 386 906" fill="none" stroke="url(#skin)" stroke-width="48" stroke-linecap="round" />
-            <path d="M263 892 C294 882 329 895 341 928 C303 946 266 934 263 892Z" fill="#2f2827" />
-            <path d="M358 900 C392 886 429 897 441 930 C399 948 361 937 358 900Z" fill="#2f2827" />
-            <path d="M284 820 C312 834 334 830 350 812" stroke="#fff1e5" stroke-width="24" stroke-linecap="round" />
-            <path d="M366 820 C395 836 419 832 435 813" stroke="#fff1e5" stroke-width="24" stroke-linecap="round" />
-          </g>
-        </g>
-
-        <g class="layer head-all">
-          <g class="layer hair-side-l">
-            <path d="M271 216 C194 272 181 390 216 540 C250 467 278 334 298 224Z" fill="url(#hair)" />
-            <path d="M245 280 C217 356 215 444 232 515" stroke="#ffc6a4" stroke-width="6" fill="none" opacity=".72" />
-          </g>
-          <g class="layer hair-side-r">
-            <path d="M444 216 C526 276 530 405 486 548 C458 450 432 324 417 224Z" fill="url(#hair)" />
-            <path d="M470 286 C496 360 492 455 472 522" stroke="#ffc6a4" stroke-width="6" fill="none" opacity=".65" />
-          </g>
-
-          <ellipse cx="358" cy="254" rx="118" ry="132" fill="url(#skin)" stroke="#9d6048" stroke-width="3" />
-          <ellipse class="blush" cx="297" cy="284" rx="31" ry="14" fill="#ee7c78" filter="url(#soft)" />
-          <ellipse class="blush" cx="419" cy="284" rx="31" ry="14" fill="#ee7c78" filter="url(#soft)" />
-
-          <g class="layer hair-front">
-            <path d="M249 226 C267 135 347 106 421 145 C477 176 496 226 478 289 C438 260 419 206 411 161 C392 225 356 257 298 283 C311 232 310 188 302 151 C289 198 276 224 249 226Z" fill="url(#hair)" />
-            <path d="M352 135 C335 79 382 71 374 134 C396 84 433 92 392 145" fill="none" stroke="#e77f58" stroke-width="10" stroke-linecap="round" />
-          </g>
-
-          <g>
-            <path d="M278 245 C297 231 323 232 338 246" fill="none" stroke="#7d4d3d" stroke-width="5" stroke-linecap="round" />
-            <path d="M378 246 C396 232 424 232 440 247" fill="none" stroke="#7d4d3d" stroke-width="5" stroke-linecap="round" />
-            <g class="eye-open">
-              <ellipse cx="310" cy="266" rx="28" ry="21" fill="#fffaf5" stroke="#6d4034" stroke-width="3" />
-              <circle cx="313" cy="268" r="14" fill="url(#eye)" />
-              <circle cx="307" cy="261" r="5" fill="#fff" />
-            </g>
-            <g class="eye-open">
-              <ellipse cx="410" cy="266" rx="28" ry="21" fill="#fffaf5" stroke="#6d4034" stroke-width="3" />
-              <circle cx="407" cy="268" r="14" fill="url(#eye)" />
-              <circle cx="401" cy="261" r="5" fill="#fff" />
-            </g>
-            <path d="M276 240 C300 225 322 227 342 241" fill="none" stroke="#d29174" stroke-width="2" />
-            <path d="M378 241 C400 226 425 228 444 243" fill="none" stroke="#d29174" stroke-width="2" />
-          </g>
-
-          <g>
-            <path d="M316 214 C296 207 282 209 270 218" fill="none" stroke="#8a4f3b" stroke-width="5" stroke-linecap="round" />
-            <path d="M399 214 C420 207 435 210 448 220" fill="none" stroke="#8a4f3b" stroke-width="5" stroke-linecap="round" />
-          </g>
-
-          <g>
-            <path class="mouth-smile" d="M335 324 C352 334 371 334 386 324" fill="none" stroke="#8d4b42" stroke-width="5" stroke-linecap="round" />
-            <path class="mouth-happy" d="M331 318 C351 350 376 350 392 318 C377 331 349 332 331 318Z" fill="#a94f4a" stroke="#8d4b42" stroke-width="4" />
-          </g>
-
-          <g>
-            <circle cx="358" cy="265" r="62" fill="none" stroke="#6c4a3e" stroke-width="4" opacity=".55" />
-            <circle cx="310" cy="265" r="40" fill="none" stroke="#6c4a3e" stroke-width="4" opacity=".62" />
-            <circle cx="410" cy="265" r="40" fill="none" stroke="#6c4a3e" stroke-width="4" opacity=".62" />
-            <path d="M350 265 L370 265" stroke="#6c4a3e" stroke-width="4" opacity=".62" />
-            <path class="glasses-flash" d="M276 243 L336 286 M378 244 L438 286" stroke="#fff7dc" stroke-width="9" stroke-linecap="round" />
-          </g>
-
-          <g class="tear">
-            <path d="M285 295 C276 312 277 326 287 335 C298 324 298 310 285 295Z" fill="#8ed8ff" opacity=".82" />
-            <path d="M431 295 C422 312 423 326 433 335 C444 324 444 310 431 295Z" fill="#8ed8ff" opacity=".82" />
-          </g>
-
-          <g transform="translate(456 170) rotate(18)">
-            <circle cx="0" cy="0" r="18" fill="#f8eadb" stroke="#a95535" stroke-width="3" />
-            <path d="M0 -35 L5 -8 L29 -21 L12 0 L35 13 L7 8 L16 35 L0 12 L-17 34 L-7 8 L-35 12 L-12 0 L-29 -20 L-5 -8Z" fill="#f4b06f" stroke="#a95535" stroke-width="2" />
-          </g>
-        </g>
-
-        <g class="sparkle">
-          <path d="M579 194 L588 217 L611 226 L588 236 L579 259 L569 236 L546 226 L569 217Z" fill="#e78a54" />
-          <path d="M166 235 L174 253 L193 260 L174 268 L166 287 L158 268 L139 260 L158 253Z" fill="#e78a54" />
-          <circle cx="515" cy="344" r="9" fill="#f8bd7c" />
-        </g>
-        <g class="glitch">
-          <path d="M262 236 H458 V251 H262Z" fill="#8ad8ff" opacity=".36" />
-          <path d="M286 304 H432 V314 H286Z" fill="#ff7ca8" opacity=".32" />
-        </g>
-        <g class="paper">
-          <path d="M118 600 L168 584 L178 633 L129 647Z" fill="#fff8ef" stroke="#d1aa8c" />
-          <path d="M552 390 L596 405 L578 454 L536 438Z" fill="#fff8ef" stroke="#d1aa8c" />
-          <path d="M128 178 L168 158 L185 200 L143 219Z" fill="#fff8ef" stroke="#d1aa8c" />
-        </g>
-      </svg>
-    </div>
+      <div class="panel">
+        <h2>拆分组清单</h2>
+        <div id="groups" class="groups"></div>
+      </div>
+    </section>
   </main>
 
-  <aside class="panel">
-    <h1>Claude Scholar Live2D 原型</h1>
-    <p>这是基于参考图制作的浏览器可运行分层 Live2D 风格原型：具备头发/披肩/怀表物理摆动、表情切换、动作触发、眼镜反光与 AI 故障特效。</p>
-
-    <section class="group">
-      <h2>表情</h2>
-      <div class="buttons">
-        <button data-exp="default">默认</button>
-        <button data-exp="smile">开心</button>
-        <button data-exp="shy">害羞</button>
-        <button data-exp="cry">委屈</button>
-        <button data-exp="serious">推理</button>
-        <button data-exp="glitch">AI 故障</button>
-      </div>
-    </section>
-
-    <section class="group">
-      <h2>动作</h2>
-      <div class="buttons">
-        <button data-motion="wave">挥手</button>
-        <button data-motion="bow">鞠躬</button>
-        <button data-motion="tilt">歪头</button>
-        <button data-motion="book">翻书</button>
-      </div>
-    </section>
-
-    <section class="group note">
-      <strong>说明：</strong>这不是 Cubism Editor 生成的官方 `.cmo3` 二进制工程，而是可运行、可预览、可继续移植到 Cubism 的分层前端原型。下一步可把这些层级映射到 PSD 与 Cubism 参数。
-    </section>
-  </aside>
-
   <script>
-    const model = document.querySelector('#model');
-    const expressions = {
-      default: { eye: 1, smile: 0, blush: 0, spark: 0, tear: 0, glasses: 0, glitch: 0 },
-      smile: { eye: 0.72, smile: 1, blush: 0.18, spark: 1, tear: 0, glasses: 0, glitch: 0 },
-      shy: { eye: 0.78, smile: 0.35, blush: 1, spark: 0.2, tear: 0, glasses: 0, glitch: 0 },
-      cry: { eye: 0.58, smile: 0, blush: 0.2, spark: 0, tear: 1, glasses: 0, glitch: 0 },
-      serious: { eye: 1.08, smile: 0, blush: 0, spark: 0.35, tear: 0, glasses: 1, glitch: 0 },
-      glitch: { eye: 1.18, smile: 0.2, blush: 0, spark: 1, tear: 0, glasses: 1, glitch: 1 },
-    };
-
-    function setExpression(name) {
-      const exp = expressions[name] || expressions.default;
-      model.dataset.expression = name;
-      model.style.setProperty('--eye-open', exp.eye);
-      model.style.setProperty('--smile', exp.smile);
-      model.style.setProperty('--blush', exp.blush);
-      model.style.setProperty('--spark', exp.spark);
-      model.style.setProperty('--tear', exp.tear);
-      model.style.setProperty('--glasses', exp.glasses);
-      model.style.setProperty('--glitch', exp.glitch);
+    async function loadPlan() {
+      const response = await fetch('decomposition-plan.json');
+      return response.json();
     }
 
-    function playMotion(name) {
-      model.dataset.motion = 'idle';
-      requestAnimationFrame(() => {
-        model.dataset.motion = name;
-        window.setTimeout(() => { model.dataset.motion = 'idle'; }, 1900);
-      });
+    function renderGroup(group) {
+      const parts = group.parts.map((item) => `<li><code>${item}</code></li>`).join('');
+      const params = group.parameters.map((item) => `<span class="param">${item}</span>`).join('');
+      return `
+        <article class="group-card" id="${group.id}">
+          <div class="group-head">
+            <h3>${group.title}</h3>
+            <span class="badge">优先级 ${group.priority}</span>
+          </div>
+          <div class="cols">
+            <div><ul>${parts}</ul></div>
+            <div>
+              <div class="params">${params}</div>
+              <p class="note">${group.notes}</p>
+            </div>
+          </div>
+        </article>`;
     }
 
-    document.querySelectorAll('[data-exp]').forEach((btn) => {
-      btn.addEventListener('click', () => setExpression(btn.dataset.exp));
+    loadPlan().then((plan) => {
+      document.querySelector('#groups').innerHTML = plan.groups.map(renderGroup).join('');
+    }).catch((error) => {
+      document.querySelector('#groups').innerHTML = `<p class="warning">拆解 JSON 加载失败：${error.message}</p>`;
     });
-    document.querySelectorAll('[data-motion]').forEach((btn) => {
-      btn.addEventListener('click', () => playMotion(btn.dataset.motion));
-    });
-
-    setExpression('default');
   </script>
 </body>
 </html>

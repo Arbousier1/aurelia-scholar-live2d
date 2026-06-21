@@ -1,6 +1,6 @@
 {
   "name": "ClaudeScholarPrototype",
-  "type": "browser-live2d-style-prototype",
+  "type": "browser-live2d-decomposition-workbench",
   "version": "1.0.0",
   "entry": "index.html",
   "preview": "screenshot.png",
@@ -36,12 +36,13 @@
     "sparkle",
     "glitch"
   ],
-  "notes": "Frontend runnable prototype; not a Cubism .cmo3 export. Use the premium spec document for PSD/Cubism production mapping.",
+  "notes": "Professional decomposition workbench; not final Cubism .cmo3 and not a simplified character drawing.",
   "runtime": {
     "model3": "runtime/claude-scholar.model3.json",
     "physics": "runtime/physics.json",
     "pose": "runtime/pose3.json",
     "layerMap": "layer-map.json",
     "qaChecklist": "QA_CHECKLIST.md"
-  }
+  },
+  "decompositionPlan": "decomposition-plan.json"
 }
