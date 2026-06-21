@@ -1,0 +1,42 @@
+{
+  "sourceImage": {
+    "width": 850,
+    "height": 1106,
+    "unit": "px",
+    "note": "Coordinates are manually mapped from the supplied flattened reference preview. Use them as first-pass cut/redraw guides, not final mask edges."
+  },
+  "commercialCleanup": [
+    { "id": "brand-logo-left", "bbox": [62, 77, 222, 197], "action": "replace with Aurelia Starflower / remove third-party text" },
+    { "id": "profile-card-left", "bbox": [31, 244, 211, 470], "action": "replace character card copy with original Aurelia profile" },
+    { "id": "top-right-brand", "bbox": [700, 48, 815, 112], "action": "replace third-party name with original worldbuilding label" },
+    { "id": "stamp-bottom-left", "bbox": [58, 995, 152, 1075], "action": "replace third-party stamp with Aurelia Starflower seal" }
+  ],
+  "regions": [
+    { "id": "character-full", "group": "00_REFERENCE", "bbox": [169, 53, 720, 1084], "priority": "S", "cutType": "full silhouette", "notes": "Main model area; remove background and rebuild hidden body/cloth under overlaps." },
+    { "id": "head-face", "group": "02_HEAD/Face", "bbox": [312, 144, 474, 333], "priority": "S", "cutType": "redraw required", "notes": "Face base under bangs/glasses; redraw cheeks, ears, jaw and hidden forehead." },
+    { "id": "eyes-glasses", "group": "03_FACE/Eyes_Glasses", "bbox": [311, 204, 467, 266], "priority": "S", "cutType": "separate transparent parts", "notes": "Separate glasses frame, lenses, reflections, eye whites, irises, pupils, highlights, lids and lashes." },
+    { "id": "mouth-nose", "group": "03_FACE/Mouth_Nose", "bbox": [358, 264, 430, 312], "priority": "S", "cutType": "expression variants", "notes": "Create A/I/U/E/O mouth set plus smile/frown/teeth/tongue variants." },
+    { "id": "ahoge", "group": "04_HAIR/Ahoge", "bbox": [373, 53, 434, 125], "priority": "S", "cutType": "independent physics", "notes": "Three-piece ahoge; redraw roots behind front hair." },
+    { "id": "bangs", "group": "04_HAIR/Bangs", "bbox": [272, 112, 495, 248], "priority": "S", "cutType": "strand split", "notes": "Split into center/left/right bang strands; each strand needs underside fill." },
+    { "id": "side-hair-left", "group": "04_HAIR/Side_L", "bbox": [159, 161, 345, 878], "priority": "S", "cutType": "multi-chain physics", "notes": "Long left hair ribbons/strands; split front/mid/back and tips." },
+    { "id": "side-hair-right", "group": "04_HAIR/Side_R", "bbox": [471, 162, 719, 879], "priority": "S", "cutType": "multi-chain physics", "notes": "Right long hair and outer curls; separate from cape and background petals." },
+    { "id": "back-hair-mass", "group": "04_HAIR/Back", "bbox": [181, 122, 706, 988], "priority": "S", "cutType": "behind body layer", "notes": "Back hair base behind body/cape; create broad base plus many tip strands." },
+    { "id": "head-flower-ribbon", "group": "06_ACCESSORY/HeadFlower_Ribbon", "bbox": [488, 111, 596, 227], "priority": "S", "cutType": "petal/ribbon split", "notes": "Flower petals, center, black ribbon loops and tails all separate." },
+    { "id": "neck-bow-star", "group": "05_OUTFIT/NeckBow_Star", "bbox": [301, 328, 474, 428], "priority": "S", "cutType": "symbol replacement", "notes": "Black bow, orange starflower mark, glow layer and knot; use original commercial mark." },
+    { "id": "left-arm-hand", "group": "07_HANDS_ARMS/Arm_L", "bbox": [266, 278, 372, 552], "priority": "S", "cutType": "jointed fingers", "notes": "Hand near chin must be redrawn with separate fingers and palm." },
+    { "id": "right-arm-hand", "group": "07_HANDS_ARMS/Arm_R", "bbox": [431, 312, 575, 592], "priority": "S", "cutType": "book grip", "notes": "Right hand around book; separate fingers from book edge." },
+    { "id": "book-prop", "group": "06_ACCESSORY/Book", "bbox": [392, 319, 570, 520], "priority": "S", "cutType": "hinged prop", "notes": "Cover, spine, back cover, page block, bookmark, metal corner and page flip variants." },
+    { "id": "blouse-sleeves", "group": "05_OUTFIT/Blouse_Sleeves", "bbox": [223, 341, 591, 666], "priority": "S", "cutType": "cloth layers", "notes": "Cream blouse, sleeves, cuffs, ruffles, buttons and shadows under arms/book." },
+    { "id": "cape-left", "group": "05_OUTFIT/Cape_L", "bbox": [160, 369, 356, 1018], "priority": "S", "cutType": "transparent cloth", "notes": "Split outer/inner/edge/pattern/highlight/shadow; keep separate from hair." },
+    { "id": "cape-right", "group": "05_OUTFIT/Cape_R", "bbox": [513, 365, 715, 990], "priority": "S", "cutType": "transparent cloth", "notes": "Right orange/cream cape sheets and ribbons, multiple swing chains." },
+    { "id": "skirt-lace", "group": "05_OUTFIT/Skirt_Lace", "bbox": [245, 541, 505, 747], "priority": "S", "cutType": "lace/frill split", "notes": "Front skirt, back skirt, lace rows, frill segments and underskirt shadows." },
+    { "id": "watch-chain", "group": "06_ACCESSORY/PocketWatch", "bbox": [473, 518, 546, 700], "priority": "A", "cutType": "pendulum physics", "notes": "Chain links, watch body, rim, glass, hands and tassel independent." },
+    { "id": "legs", "group": "08_LEGS_SHOES/Legs", "bbox": [301, 645, 493, 1010], "priority": "S", "cutType": "pose capable", "notes": "Left/right thighs, knees, calves; redraw overlaps under skirt and socks." },
+    { "id": "sock-left", "group": "08_LEGS_SHOES/Sock_L", "bbox": [306, 866, 398, 1026], "priority": "A", "cutType": "ruffle split", "notes": "Slouch sock folds, ruffle, emblem and shadows." },
+    { "id": "shoe-left", "group": "08_LEGS_SHOES/Shoe_L", "bbox": [292, 979, 399, 1085], "priority": "A", "cutType": "shoe parts", "notes": "Shoe base, sole, strap, buckle, highlight, bow." },
+    { "id": "shoe-right", "group": "08_LEGS_SHOES/Shoe_R", "bbox": [401, 985, 520, 1088], "priority": "A", "cutType": "shoe parts", "notes": "Right shoe base, sole, strap, buckle, highlight." },
+    { "id": "floating-papers-petals", "group": "09_EFFECTS/Papers_Petals", "bbox": [119, 221, 735, 920], "priority": "B", "cutType": "scene item particles", "notes": "Extract/redraw papers and petals as looping foreground/background particles." },
+    { "id": "right-props", "group": "10_SCENE/Books_Cup_Vase", "bbox": [591, 764, 812, 1076], "priority": "B", "cutType": "separate scene props", "notes": "Book stack, cup, vase and flowers should be separate scene items, not main model." },
+    { "id": "background-compass", "group": "10_SCENE/Compass_Backdrop", "bbox": [587, 49, 799, 254], "priority": "B", "cutType": "background optional", "notes": "Redraw as optional backdrop overlay with original commercial symbol." }
+  ]
+}
