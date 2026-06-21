@@ -10,6 +10,14 @@
 - `live2d/claude-scholar-prototype/layer-map.json`：浏览器原型层到 PSD/Cubism 层的迁移映射。
 - `live2d/claude-scholar-prototype/QA_CHECKLIST.md`：原型、迁移与生产交付 QA 清单。
 
+## 在线预览
+
+GitHub Pages 部署地址：
+
+```text
+https://arbousier1.github.io/claude-scholar-live2d/
+```
+
 ## 运行原型
 
 ```bash
