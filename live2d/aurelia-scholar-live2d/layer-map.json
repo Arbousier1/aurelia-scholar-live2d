@@ -1,0 +1,22 @@
+{
+  "source": "index.html inline SVG",
+  "mappingPurpose": "Map browser prototype groups to PSD/Cubism production layers.",
+  "groups": [
+    { "prototypeSelector": ".hair-back", "psdGroup": "04_HAIR/Hair_Back", "cubismParts": ["PartHairBack", "ParamHairBack"] },
+    { "prototypeSelector": ".hair-side-l", "psdGroup": "04_HAIR/Hair_Side_L", "cubismParts": ["PartHairSideL", "ParamHairSide"] },
+    { "prototypeSelector": ".hair-side-r", "psdGroup": "04_HAIR/Hair_Side_R", "cubismParts": ["PartHairSideR", "ParamHairSide"] },
+    { "prototypeSelector": ".hair-front", "psdGroup": "04_HAIR/Hair_Front", "cubismParts": ["PartHairFront", "ParamHairFront"] },
+    { "prototypeSelector": ".breath", "psdGroup": "01_BODY/Torso_Breath", "cubismParts": ["PartBodyTorso", "ParamBreath"] },
+    { "prototypeSelector": ".cape-l", "psdGroup": "05_OUTFIT/Cape_L", "cubismParts": ["PartCapeL", "ParamCapeSwing"] },
+    { "prototypeSelector": ".cape-r", "psdGroup": "05_OUTFIT/Cape_R", "cubismParts": ["PartCapeR", "ParamCapeSwing"] },
+    { "prototypeSelector": ".arm-wave", "psdGroup": "07_HANDS_ARMS/Arm_R_Wave", "cubismParts": ["PartArmRWave", "ParamArmRWave"] },
+    { "prototypeSelector": ".book", "psdGroup": "06_ACCESSORY/Book", "cubismParts": ["PartBook", "ParamBookOpen", "ParamPageFlip"] },
+    { "prototypeSelector": ".watch", "psdGroup": "06_ACCESSORY/PocketWatch", "cubismParts": ["PartWatch", "ParamWatchSwing"] },
+    { "prototypeSelector": ".eye-open", "psdGroup": "03_FACE/Eyes", "cubismParts": ["PartEyeL", "PartEyeR", "ParamEyeLOpen", "ParamEyeROpen"] },
+    { "prototypeSelector": ".mouth-smile,.mouth-happy", "psdGroup": "03_FACE/Mouth", "cubismParts": ["PartMouth", "ParamMouthForm", "ParamMouthOpenY"] },
+    { "prototypeSelector": ".blush", "psdGroup": "10_EMOTION_PARTS/Blush", "cubismParts": ["PartBlush", "ParamBlush"] },
+    { "prototypeSelector": ".tear", "psdGroup": "10_EMOTION_PARTS/Tear", "cubismParts": ["PartTear", "ParamTear"] },
+    { "prototypeSelector": ".sparkle", "psdGroup": "09_EFFECTS/Sparkle", "cubismParts": ["PartSparkle", "ParamStarGlow"] },
+    { "prototypeSelector": ".glitch", "psdGroup": "09_EFFECTS/Glitch", "cubismParts": ["PartGlitch", "ParamAI_Glitch"] }
+  ]
+}

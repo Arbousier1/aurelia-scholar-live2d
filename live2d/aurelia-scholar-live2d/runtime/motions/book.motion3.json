@@ -1,0 +1,9 @@
+{
+  "Version": 3,
+  "Meta": { "Duration": 1.4, "Fps": 30, "Loop": false, "CurveCount": 3, "TotalSegmentCount": 6, "TotalPointCount": 9 },
+  "Curves": [
+    { "Target": "Parameter", "Id": "ParamBookOpen", "Segments": [0, 0, 1, 0.55, 1, 1, 1.4, 0] },
+    { "Target": "Parameter", "Id": "ParamPageFlip", "Segments": [0, 0, 1, 0.5, 1, 1, 1.4, 0] },
+    { "Target": "Parameter", "Id": "ParamStarGlow", "Segments": [0, 0, 1, 0.55, 0.65, 1, 1.4, 0] }
+  ]
+}

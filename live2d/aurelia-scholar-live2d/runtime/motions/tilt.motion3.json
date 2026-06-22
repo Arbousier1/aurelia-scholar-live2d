@@ -1,0 +1,9 @@
+{
+  "Version": 3,
+  "Meta": { "Duration": 1.8, "Fps": 30, "Loop": false, "CurveCount": 3, "TotalSegmentCount": 6, "TotalPointCount": 9 },
+  "Curves": [
+    { "Target": "Parameter", "Id": "ParamAngleZ", "Segments": [0, 0, 1, 0.8, -0.55, 1, 1.8, 0] },
+    { "Target": "Parameter", "Id": "ParamEyeBallX", "Segments": [0, 0, 1, 0.8, -0.3, 1, 1.8, 0] },
+    { "Target": "Parameter", "Id": "ParamQuestionMark", "Segments": [0, 0, 1, 0.6, 1, 1, 1.8, 0] }
+  ]
+}

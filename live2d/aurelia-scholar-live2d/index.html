@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurelia Scholar Live2D 专业拆解工作台</title>
+  <style>
+    :root {
+      --ink: #563628;
+      --muted: #8f6a57;
+      --orange: #d9784c;
+      --orange-2: #f0a16d;
+      --cream: #fff8f1;
+      --paper: #f8e5d4;
+      --line: rgba(141, 84, 54, .24);
+      --shadow: rgba(94, 47, 25, .15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 72% 10%, rgba(217, 120, 76, .18), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(217, 120, 76, .12), transparent 30%),
+        linear-gradient(135deg, #fffaf6, #f7e2d1);
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    header {
+      padding: 42px clamp(18px, 5vw, 72px) 22px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 248, 241, .72);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    h1 { margin: 0; font-size: clamp(28px, 5vw, 58px); color: var(--orange); letter-spacing: -.04em; }
+    .subtitle { margin: 10px 0 0; max-width: 980px; color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(320px, 470px) 1fr;
+      gap: 24px;
+      padding: 28px clamp(18px, 5vw, 72px) 60px;
+    }
+    .reference-card, .panel, .group-card {
+      background: rgba(255, 250, 246, .82);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 18px 44px var(--shadow);
+    }
+    .reference-card { padding: 18px; position: sticky; top: 152px; align-self: start; }
+    .reference-frame {
+      aspect-ratio: 3 / 4.35;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(90deg, transparent 49.8%, rgba(169, 88, 52, .16) 50%, transparent 50.2%),
+        linear-gradient(0deg, transparent 49.8%, rgba(169, 88, 52, .16) 50%, transparent 50.2%),
+        radial-gradient(circle at 64% 15%, transparent 0 16%, rgba(169, 88, 52, .18) 16.2%, transparent 16.6%),
+        linear-gradient(160deg, #fff8f0, #f6d9c4);
+      border: 1px solid rgba(169, 88, 52, .18);
+    }
+    .silhouette {
+      position: absolute;
+      inset: 8% 18% 5%;
+      border-radius: 46% 46% 34% 34%;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(235, 140, 95, .72) 0 18%, transparent 18.5%),
+        linear-gradient(90deg, rgba(185, 95, 58, .62), rgba(255,255,255,.10), rgba(185, 95, 58, .62));
+      clip-path: polygon(48% 0, 56% 4%, 64% 12%, 74% 31%, 89% 72%, 79% 100%, 58% 78%, 50% 95%, 42% 78%, 21% 100%, 11% 72%, 26% 31%, 36% 12%);
+      filter: drop-shadow(0 20px 24px rgba(125, 70, 42, .25));
+    }
+    .cut-line { position: absolute; border: 2px dashed rgba(133, 73, 45, .55); border-radius: 999px; color: #fff; background: var(--orange); padding: 4px 8px; font-size: 12px; font-weight: 800; }
+    .cut-line:nth-child(2) { left: 42%; top: 12%; }
+    .cut-line:nth-child(3) { left: 22%; top: 33%; }
+    .cut-line:nth-child(4) { right: 18%; top: 39%; }
+    .cut-line:nth-child(5) { left: 37%; top: 55%; }
+    .cut-line:nth-child(6) { right: 24%; top: 65%; }
+    .cut-line:nth-child(7) { left: 38%; bottom: 8%; }
+    .reference-note { margin: 16px 4px 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .panel { padding: 22px; margin-bottom: 22px; }
+    .panel h2 { margin: 0 0 12px; color: #9f5636; font-size: 20px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .stat { padding: 14px; border-radius: 18px; background: #fff3e9; border: 1px solid var(--line); }
+    .stat strong { display: block; font-size: 26px; color: var(--orange); }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .groups { display: grid; gap: 16px; }
+    .group-card { padding: 20px; }
+    .group-head { display: flex; justify-content: space-between; gap: 18px; align-items: start; margin-bottom: 14px; }
+    .group-head h3 { margin: 0; color: #7a3f2d; font-size: 20px; }
+    .badge { padding: 5px 10px; border-radius: 999px; background: var(--orange); color: #fff; font-size: 12px; font-weight: 900; }
+    .cols { display: grid; grid-template-columns: 1.3fr .9fr; gap: 16px; }
+    ul { margin: 0; padding-left: 18px; line-height: 1.8; }
+    li { margin: 3px 0; }
+    code { color: #9f5636; background: #fff0e5; padding: 2px 5px; border-radius: 6px; }
+    .params { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+    .param { font-size: 12px; border: 1px solid var(--line); color: #8b4f38; background: #fff9f4; padding: 6px 8px; border-radius: 999px; }
+    .note { color: var(--muted); line-height: 1.75; font-size: 13px; }
+    .warning { border-left: 5px solid var(--orange); background: #fff2e8; padding: 14px 16px; border-radius: 14px; line-height: 1.75; color: #70432f; }
+    @media (max-width: 920px) {
+      header { position: static; }
+      .layout { grid-template-columns: 1fr; }
+      .reference-card { position: static; }
+      .stats, .cols { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Live2D 专业拆解工作台</h1>
+    <p class="subtitle">针对参考图的真实生产拆分方案：不再用简陋 SVG 小人冒充成品，而是把原图应拆的部位、PSD 层级、Cubism 参数、物理组和交付注意事项清楚列出来，供画师重绘拆层与建模师绑定。</p>
+  </header>
+
+  <main class="layout">
+    <aside class="reference-card">
+      <div class="reference-frame" aria-label="参考图拆分区域示意">
+        <div class="silhouette"></div>
+        <span class="cut-line">头脸</span>
+        <span class="cut-line">左发</span>
+        <span class="cut-line">右发</span>
+        <span class="cut-line">书本</span>
+        <span class="cut-line">怀表</span>
+        <span class="cut-line">腿鞋</span>
+      </div>
+      <p class="reference-note">此图是拆分区域示意，不是成品绘制。真正 Live2D 需要基于原始高清图进行补画、重绘和分层；单张压缩截图无法自动变成合格 PSD 分层。</p>
+    </aside>
+
+    <section>
+      <div class="panel">
+        <h2>生产目标</h2>
+        <p class="warning">目标是按市面高规格模型拆：长发多物理链、透明披肩单独纹理/阴影/高光、眼镜独立反光、书本可翻页、手指可动、怀表链条物理、至少 16 表情与 10 动作。当前页面是拆解工单，不再展示低质量角色绘制。</p>
+        <div class="stats">
+          <div class="stat"><strong>180+</strong><span>建议 PSD 图层</span></div>
+          <div class="stat"><strong>16+</strong><span>表情目标</span></div>
+          <div class="stat"><strong>10+</strong><span>动作目标</span></div>
+          <div class="stat"><strong>9</strong><span>物理组目标</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>拆分组清单</h2>
+        <div id="groups" class="groups"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Photoshop 初始拆层脚本</h2>
+        <p class="warning">已从你这张干净角色图直接生成第一版分层 PSD 与透明 PNG 拆层：包含 23 个初始区域层、全画布 PNG、紧裁 PNG、alpha 蒙版、contact sheet 和 zip 包。人工精修蒙版、补画遮挡和继续细拆发丝/蕾丝/链条仍是商用最终步骤。</p>
+        <div class="stats">
+          <div class="stat"><strong>23</strong><span>初始区域层</span></div>
+          <div class="stat"><strong>11</strong><span>PS 组</span></div>
+          <div class="stat"><strong>1024×1536</strong><span>干净图坐标</span></div>
+          <div class="stat"><strong>PSD</strong><span>已生成分层文件</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>最终完整拆分包</h2>
+        <p class="warning">已生成完整规划级拆分：最终图层树、466 行 PSD/Cubism 图层清单、参数绑定表和最终切割顺序。注意：这仍是给画师重绘和建模师绑定的完整拆分工单，不是从压缩图自动抠出的像素级 PSD。</p>
+        <div class="stats">
+          <div class="stat"><strong id="finalLayerCount">466</strong><span>最终拆分图层</span></div>
+          <div class="stat"><strong>11</strong><span>顶层 PSD 组</span></div>
+          <div class="stat"><strong>20</strong><span>参数绑定项</span></div>
+          <div class="stat"><strong>3</strong><span>最终交付表</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>第一阶段原图坐标拆分</h2>
+        <p class="warning">以下坐标基于 850×1106 的参考图预览手工标注，用于画师切割和补画的第一轮工单，不是最终像素级蒙版。</p>
+        <div id="regions" class="groups"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    async function loadPlan() {
+      const response = await fetch('decomposition-plan.json');
+      return response.json();
+    }
+
+    function renderGroup(group) {
+      const parts = group.parts.map((item) => `<li><code>${item}</code></li>`).join('');
+      const params = group.parameters.map((item) => `<span class="param">${item}</span>`).join('');
+      return `
+        <article class="group-card" id="${group.id}">
+          <div class="group-head">
+            <h3>${group.title}</h3>
+            <span class="badge">优先级 ${group.priority}</span>
+          </div>
+          <div class="cols">
+            <div><ul>${parts}</ul></div>
+            <div>
+              <div class="params">${params}</div>
+              <p class="note">${group.notes}</p>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function renderRegion(region) {
+      return `
+        <article class="group-card" id="${region.id}">
+          <div class="group-head">
+            <h3>${region.group}</h3>
+            <span class="badge">${region.priority}</span>
+          </div>
+          <div class="params"><span class="param">bbox: ${region.bbox.join(', ')}</span><span class="param">${region.cutType}</span></div>
+          <p class="note">${region.notes}</p>
+        </article>`;
+    }
+
+    loadPlan().then((plan) => {
+      document.querySelector('#groups').innerHTML = plan.groups.map(renderGroup).join('');
+    }).catch((error) => {
+      document.querySelector('#groups').innerHTML = `<p class="warning">拆解 JSON 加载失败：${error.message}</p>`;
+    });
+
+    fetch('split/source-coordinate-map.json').then((response) => response.json()).then((map) => {
+      document.querySelector('#regions').innerHTML = map.regions.map(renderRegion).join('');
+    }).catch((error) => {
+      document.querySelector('#regions').innerHTML = `<p class="warning">坐标拆分数据加载失败：${error.message}</p>`;
+    });
+  </script>
+</body>
+</html>
